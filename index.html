@@ -4,166 +4,296 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>국제이혼 가이드 | International Divorce Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --bg-color: #f8f9fa;
+            --samsung-black: #000000;
+            --samsung-gray-900: #212124;
+            --samsung-gray-700: #4a4a4a;
+            --samsung-gray-500: #757575;
+            --samsung-gray-200: #e8e8e8;
+            --samsung-gray-100: #f5f5f5;
+            --samsung-white: #ffffff;
+            --samsung-blue: #1428a0;
+            --samsung-blue-hover: #0f1f7a;
+            --section-bg: #fafafa;
+            --card-shadow: 0 2px 24px rgba(0,0,0,0.06);
+            --radius: 12px;
+            --max-content: 1200px;
         }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            line-height: 1.6;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            line-height: 1.65;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: #333;
+            background: var(--samsung-white);
+            color: var(--samsung-gray-900);
+            -webkit-font-smoothing: antialiased;
+        }
+        .header-wrap {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--samsung-white);
+            border-bottom: 1px solid var(--samsung-gray-200);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.04);
         }
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            position: relative;
+            max-width: var(--max-content);
+            margin: 0 auto;
+            padding: 1rem 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 600;
+            color: var(--samsung-black);
+            margin: 0;
+            letter-spacing: -0.02em;
         }
         .lang-switch {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+            display: flex;
+            gap: 0;
+            border: 1px solid var(--samsung-gray-200);
+            border-radius: 8px;
+            overflow: hidden;
         }
         .lang-btn {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            padding: 5px 10px;
+            background: var(--samsung-white);
+            color: var(--samsung-gray-700);
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.8125rem;
+            font-weight: 500;
             cursor: pointer;
-            border-radius: 4px;
+            font-family: inherit;
+            transition: background 0.2s, color 0.2s;
         }
+        .lang-btn:hover { background: var(--samsung-gray-100); color: var(--samsung-gray-900); }
         .lang-btn.active {
-            background-color: white;
-            color: var(--primary-color);
-            font-weight: bold;
+            background: var(--samsung-black);
+            color: var(--samsung-white);
         }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 20px;
+        .hero {
+            max-width: var(--max-content);
+            margin: 0 auto;
+            padding: 64px 24px 56px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--samsung-black);
+            margin: 0 0 12px;
+            letter-spacing: -0.03em;
+            line-height: 1.25;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: var(--samsung-gray-500);
+            margin: 0;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .section {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+            width: 100%;
+            padding: 56px 24px 64px;
+            background: var(--section-bg);
         }
-        h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
+        .section:nth-of-type(2) { background: var(--samsung-white); }
+        .section-inner {
+            max-width: var(--max-content);
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: clamp(1.375rem, 3vw, 1.75rem);
+            font-weight: 700;
+            color: var(--samsung-black);
+            margin: 0 0 32px;
+            letter-spacing: -0.02em;
+        }
+        .cards {
+            display: grid;
+            gap: 20px;
         }
         .case-card {
-            background: #f1f4f8;
-            padding: 1rem;
-            border-radius: 6px;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--accent-color);
+            background: var(--samsung-white);
+            padding: 28px 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.25s ease;
+        }
+        .case-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+        .case-card h3 {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--samsung-black);
+            margin: 0 0 12px;
+            letter-spacing: -0.01em;
+        }
+        .case-card p {
+            font-size: 0.9375rem;
+            color: var(--samsung-gray-700);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .test-intro {
+            font-size: 0.9375rem;
+            color: var(--samsung-gray-500);
+            margin: 0 0 28px;
+            max-width: 640px;
         }
         .test-form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 24px;
+        }
+        .question-block {
+            padding: 20px 24px;
+            background: var(--samsung-gray-100);
+            border-radius: var(--radius);
+            border: 1px solid transparent;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .question-block:focus-within {
+            background: var(--samsung-white);
+            border-color: var(--samsung-gray-200);
+            box-shadow: var(--card-shadow);
         }
         .question {
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--samsung-gray-900);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .question-block label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9375rem;
+            color: var(--samsung-gray-700);
+            cursor: pointer;
+            margin-right: 20px;
+        }
+        .question-block input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--samsung-blue);
         }
         .btn-submit {
-            background-color: var(--accent-color);
-            color: white;
+            background: var(--samsung-blue);
+            color: var(--samsung-white);
             border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 4px;
+            padding: 14px 28px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            margin-top: 10px;
+            font-family: inherit;
+            align-self: flex-start;
+            transition: background 0.2s;
         }
-        .btn-submit:hover {
-            background-color: #2980b9;
-        }
+        .btn-submit:hover { background: var(--samsung-blue-hover); }
         #test-result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 4px;
-            font-weight: bold;
+            margin-top: 24px;
+            padding: 24px 28px;
+            border-radius: var(--radius);
+            font-size: 0.9375rem;
+            line-height: 1.7;
             display: none;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.04);
         }
-        .result-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .result-warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .result-success {
+            background: #e8f4fc;
+            color: #0c4c8c;
+            border-color: rgba(20,40,160,0.15);
+        }
+        .result-warning {
+            background: #fff8e6;
+            color: #7a5a00;
+            border-color: rgba(220,165,0,0.2);
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="lang-switch">
-            <button class="lang-btn active" onclick="setLanguage('ko')">KOR</button>
-            <button class="lang-btn" onclick="setLanguage('en')">ENG</button>
+    <div class="header-wrap">
+        <header>
+            <h1 data-ko="국제이혼 절차 및 관할권 가이드" data-en="International Divorce & Jurisdiction Guide">국제이혼 절차 및 관할권 가이드</h1>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('ko')">KOR</button>
+                <button class="lang-btn" onclick="setLanguage('en')">ENG</button>
+            </div>
+        </header>
+    </div>
+
+    <section class="hero">
+        <h2 data-ko="혼인신고 국가별 이혼 절차" data-en="Divorce Procedures by Marriage Registration Country">혼인신고 국가별 이혼 절차</h2>
+        <p data-ko="어디에서 혼인신고를 했는지에 따라 이혼 절차가 달라집니다. 아래 유형을 확인해 보세요." data-en="Divorce procedures vary depending on where you registered your marriage. Review the cases below."></p>
+    </section>
+
+    <section class="section">
+        <div class="section-inner">
+            <h2 class="section-title" data-ko="절차 유형별 안내" data-en="Guide by Procedure Type">절차 유형별 안내</h2>
+            <div class="cards">
+                <div class="case-card">
+                    <h3 data-ko="1. 한국에서만 혼인신고를 한 경우" data-en="1. Registered Only in South Korea">1. 한국에서만 혼인신고를 한 경우</h3>
+                    <p data-ko="한국 법원의 관할권이 인정된다면, 일반적인 한국의 이혼 절차(협의이혼 또는 재판상 이혼)를 따릅니다. 이혼이 성립되면 한국 가족관계등록부가 정리되며 절차가 종결됩니다." 
+                       data-en="If Korean courts have jurisdiction, standard Korean divorce procedures (mutual agreement or judicial divorce) apply. Once finalized, the Korean family registry is updated, and the process is complete."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-ko="2. 외국에서만 혼인신고를 한 경우" data-en="2. Registered Only in a Foreign Country">2. 외국에서만 혼인신고를 한 경우</h3>
+                    <p data-ko="한국에 혼인신고가 되어 있지 않더라도, 실질적인 혼인 관계가 있고 한국 법원에 관할권이 있다면 한국 법원에서 재판상 이혼 청구가 가능합니다. 한국 법원의 이혼 판결문을 번역 및 공증하여 해당 외국 관청에 제출(승인 절차)해야 해당 국가에서도 이혼이 유효해집니다." 
+                       data-en="Even without Korean registration, if a de facto marriage exists and Korean courts have jurisdiction, you can file for divorce in Korea. To make it valid in the foreign country, the Korean court's ruling must be translated, notarized, and recognized by the foreign authorities."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-ko="3. 양국 모두 혼인신고를 한 경우" data-en="3. Registered in Both Countries">3. 양국 모두 혼인신고를 한 경우</h3>
+                    <p data-ko="양국에서 모두 이혼의 효력을 발생시켜야 합니다. 한국에서 먼저 이혼 판결을 받은 경우, 그 판결문을 외국어로 번역 및 아포스티유(또는 영사 확인)를 받아 외국 관청에 이혼 신고를 해야 양국에서 완전한 이혼이 성립됩니다." 
+                       data-en="The divorce must be legally recognized in both nations. If you obtain a divorce ruling in Korea first, you must translate the decree, get an Apostille (or consular legalization), and report it to the foreign authority to finalize the divorce in both countries."></p>
+                </div>
+            </div>
         </div>
-        <h1 data-ko="국제이혼 절차 및 관할권 가이드" data-en="International Divorce & Jurisdiction Guide">국제이혼 절차 및 관할권 가이드</h1>
-    </header>
+    </section>
 
-    <div class="container">
-        <div class="section">
-            <h2 data-ko="혼인신고 국가별 이혼 절차" data-en="Divorce Procedures by Marriage Registration Country">혼인신고 국가별 이혼 절차</h2>
-            
-            <div class="case-card">
-                <h3 data-ko="1. 한국에서만 혼인신고를 한 경우" data-en="1. Registered Only in South Korea">1. 한국에서만 혼인신고를 한 경우</h3>
-                <p data-ko="한국 법원의 관할권이 인정된다면, 일반적인 한국의 이혼 절차(협의이혼 또는 재판상 이혼)를 따릅니다. 이혼이 성립되면 한국 가족관계등록부가 정리되며 절차가 종결됩니다." 
-                   data-en="If Korean courts have jurisdiction, standard Korean divorce procedures (mutual agreement or judicial divorce) apply. Once finalized, the Korean family registry is updated, and the process is complete."></p>
-            </div>
-
-            <div class="case-card">
-                <h3 data-ko="2. 외국에서만 혼인신고를 한 경우" data-en="2. Registered Only in a Foreign Country">2. 외국에서만 혼인신고를 한 경우</h3>
-                <p data-ko="한국에 혼인신고가 되어 있지 않더라도, 실질적인 혼인 관계가 있고 한국 법원에 관할권이 있다면 한국 법원에서 재판상 이혼 청구가 가능합니다. 한국 법원의 이혼 판결문을 번역 및 공증하여 해당 외국 관청에 제출(승인 절차)해야 해당 국가에서도 이혼이 유효해집니다." 
-                   data-en="Even without Korean registration, if a de facto marriage exists and Korean courts have jurisdiction, you can file for divorce in Korea. To make it valid in the foreign country, the Korean court's ruling must be translated, notarized, and recognized by the foreign authorities."></p>
-            </div>
-
-            <div class="case-card">
-                <h3 data-ko="3. 양국 모두 혼인신고를 한 경우" data-en="3. Registered in Both Countries">3. 양국 모두 혼인신고를 한 경우</h3>
-                <p data-ko="양국에서 모두 이혼의 효력을 발생시켜야 합니다. 한국에서 먼저 이혼 판결을 받은 경우, 그 판결문을 외국어로 번역 및 아포스티유(또는 영사 확인)를 받아 외국 관청에 이혼 신고를 해야 양국에서 완전한 이혼이 성립됩니다." 
-                   data-en="The divorce must be legally recognized in both nations. If you obtain a divorce ruling in Korea first, you must translate the decree, get an Apostille (or consular legalization), and report it to the foreign authority to finalize the divorce in both countries."></p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 data-ko="한국 법원 이혼 가능 여부 (국제재판관할권) 테스트" data-en="Jurisdiction Test: Can I get a divorce in Korea?">한국 법원 이혼 가능 여부 (국제재판관할권) 테스트</h2>
-            <p data-ko="대한민국 법원에 이혼 소송을 제기할 수 있는지 간단히 확인해 보세요. (참고용이며 법적 효력은 없습니다.)" 
+    <section class="section">
+        <div class="section-inner">
+            <h2 class="section-title" data-ko="한국 법원 이혼 가능 여부 (국제재판관할권) 테스트" data-en="Jurisdiction Test: Can I get a divorce in Korea?">한국 법원 이혼 가능 여부 (국제재판관할권) 테스트</h2>
+            <p class="test-intro" data-ko="대한민국 법원에 이혼 소송을 제기할 수 있는지 간단히 확인해 보세요. (참고용이며 법적 효력은 없습니다.)" 
                data-en="Check if you can file for divorce in a South Korean court. (For reference only, holds no legal authority.)"></p>
 
             <form class="test-form" id="jurisdictionTest">
                 <div class="question-block">
-                    <div class="question" data-ko="1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?" data-en="1. Does the defendant (your spouse) currently reside in South Korea?">1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?</div>
+                    <span class="question" data-ko="1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?" data-en="1. Does the defendant (your spouse) currently reside in South Korea?">1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?</span>
                     <label><input type="radio" name="q1" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
                     <label><input type="radio" name="q1" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
                 </div>
-
                 <div class="question-block">
-                    <div class="question" data-ko="2. 부부 중 한 명이 대한민국 국민입니까?" data-en="2. Is at least one spouse a South Korean citizen?">2. 부부 중 한 명이 대한민국 국민입니까?</div>
+                    <span class="question" data-ko="2. 부부 중 한 명이 대한민국 국민입니까?" data-en="2. Is at least one spouse a South Korean citizen?">2. 부부 중 한 명이 대한민국 국민입니까?</span>
                     <label><input type="radio" name="q2" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
                     <label><input type="radio" name="q2" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
                 </div>
-
                 <div class="question-block">
-                    <div class="question" data-ko="3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?" data-en="3. Was your last shared marital residence in South Korea, and do you (the plaintiff) currently live in South Korea?">3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?</div>
+                    <span class="question" data-ko="3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?" data-en="3. Was your last shared marital residence in South Korea, and do you (the plaintiff) currently live in South Korea?">3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?</span>
                     <label><input type="radio" name="q3" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
                     <label><input type="radio" name="q3" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
                 </div>
-
                 <button type="button" class="btn-submit" onclick="calculateResult()" data-ko="결과 확인하기" data-en="Check Result">결과 확인하기</button>
             </form>
 
             <div id="test-result"></div>
         </div>
-    </div>
+    </section>
 
     <script>
         let currentLang = 'ko';

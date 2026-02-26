@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국제이혼 가이드 | International Divorce Guide</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+        }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: #333;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        .lang-btn {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .lang-btn.active {
+            background-color: white;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        .case-card {
+            background: #f1f4f8;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        .test-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .btn-submit {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+        #test-result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: none;
+        }
+        .result-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .result-warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLanguage('ko')">KOR</button>
+            <button class="lang-btn" onclick="setLanguage('en')">ENG</button>
+        </div>
+        <h1 data-ko="국제이혼 절차 및 관할권 가이드" data-en="International Divorce & Jurisdiction Guide">국제이혼 절차 및 관할권 가이드</h1>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2 data-ko="혼인신고 국가별 이혼 절차" data-en="Divorce Procedures by Marriage Registration Country">혼인신고 국가별 이혼 절차</h2>
+            
+            <div class="case-card">
+                <h3 data-ko="1. 한국에서만 혼인신고를 한 경우" data-en="1. Registered Only in South Korea">1. 한국에서만 혼인신고를 한 경우</h3>
+                <p data-ko="한국 법원의 관할권이 인정된다면, 일반적인 한국의 이혼 절차(협의이혼 또는 재판상 이혼)를 따릅니다. 이혼이 성립되면 한국 가족관계등록부가 정리되며 절차가 종결됩니다." 
+                   data-en="If Korean courts have jurisdiction, standard Korean divorce procedures (mutual agreement or judicial divorce) apply. Once finalized, the Korean family registry is updated, and the process is complete."></p>
+            </div>
+
+            <div class="case-card">
+                <h3 data-ko="2. 외국에서만 혼인신고를 한 경우" data-en="2. Registered Only in a Foreign Country">2. 외국에서만 혼인신고를 한 경우</h3>
+                <p data-ko="한국에 혼인신고가 되어 있지 않더라도, 실질적인 혼인 관계가 있고 한국 법원에 관할권이 있다면 한국 법원에서 재판상 이혼 청구가 가능합니다. 한국 법원의 이혼 판결문을 번역 및 공증하여 해당 외국 관청에 제출(승인 절차)해야 해당 국가에서도 이혼이 유효해집니다." 
+                   data-en="Even without Korean registration, if a de facto marriage exists and Korean courts have jurisdiction, you can file for divorce in Korea. To make it valid in the foreign country, the Korean court's ruling must be translated, notarized, and recognized by the foreign authorities."></p>
+            </div>
+
+            <div class="case-card">
+                <h3 data-ko="3. 양국 모두 혼인신고를 한 경우" data-en="3. Registered in Both Countries">3. 양국 모두 혼인신고를 한 경우</h3>
+                <p data-ko="양국에서 모두 이혼의 효력을 발생시켜야 합니다. 한국에서 먼저 이혼 판결을 받은 경우, 그 판결문을 외국어로 번역 및 아포스티유(또는 영사 확인)를 받아 외국 관청에 이혼 신고를 해야 양국에서 완전한 이혼이 성립됩니다." 
+                   data-en="The divorce must be legally recognized in both nations. If you obtain a divorce ruling in Korea first, you must translate the decree, get an Apostille (or consular legalization), and report it to the foreign authority to finalize the divorce in both countries."></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 data-ko="한국 법원 이혼 가능 여부 (국제재판관할권) 테스트" data-en="Jurisdiction Test: Can I get a divorce in Korea?">한국 법원 이혼 가능 여부 (국제재판관할권) 테스트</h2>
+            <p data-ko="대한민국 법원에 이혼 소송을 제기할 수 있는지 간단히 확인해 보세요. (참고용이며 법적 효력은 없습니다.)" 
+               data-en="Check if you can file for divorce in a South Korean court. (For reference only, holds no legal authority.)"></p>
+
+            <form class="test-form" id="jurisdictionTest">
+                <div class="question-block">
+                    <div class="question" data-ko="1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?" data-en="1. Does the defendant (your spouse) currently reside in South Korea?">1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?</div>
+                    <label><input type="radio" name="q1" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q1" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
+                </div>
+
+                <div class="question-block">
+                    <div class="question" data-ko="2. 부부 중 한 명이 대한민국 국민입니까?" data-en="2. Is at least one spouse a South Korean citizen?">2. 부부 중 한 명이 대한민국 국민입니까?</div>
+                    <label><input type="radio" name="q2" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q2" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
+                </div>
+
+                <div class="question-block">
+                    <div class="question" data-ko="3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?" data-en="3. Was your last shared marital residence in South Korea, and do you (the plaintiff) currently live in South Korea?">3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?</div>
+                    <label><input type="radio" name="q3" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q3" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
+                </div>
+
+                <button type="button" class="btn-submit" onclick="calculateResult()" data-ko="결과 확인하기" data-en="Check Result">결과 확인하기</button>
+            </form>
+
+            <div id="test-result"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'ko';
+
+        // 언어 변경 함수
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // 버튼 스타일 업데이트
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase().includes(lang)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // 텍스트 업데이트
+            document.querySelectorAll('[data-ko]').forEach(el => {
+                el.innerText = el.getAttribute(`data-${lang}`);
+            });
+
+            // 결과창이 열려있다면 결과창 언어도 업데이트
+            const resultDiv = document.getElementById('test-result');
+            if(resultDiv.style.display === 'block') {
+                calculateResult();
+            }
+        }
+
+        // 테스트 결과 계산 함수 (대한민국 국제사법 제2조 등 기준 간략화)
+        function calculateResult() {
+            const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+            const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+            const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+
+            if (!q1 || !q2 || !q3) {
+                alert(currentLang === 'ko' ? "모든 질문에 답해주세요." : "Please answer all questions.");
+                return;
+            }
+
+            const resultDiv = document.getElementById('test-result');
+            resultDiv.style.display = 'block';
+
+            // 피고의 주소지가 한국이거나, 부부의 마지막 거주지가 한국이고 원고가 한국에 있는 경우 관할권 인정 가능성이 매우 높음
+            if (q1 === 'yes' || q3 === 'yes') {
+                resultDiv.className = 'result-success';
+                resultDiv.innerHTML = currentLang === 'ko' ? 
+                    "<strong>한국 법원에 이혼 소송을 진행할 수 있을 가능성이 매우 높습니다.</strong><br>해당 사안은 대한민국과 실질적 관련성이 인정될 확률이 높으므로, 구체적인 절차를 준비하시기 바랍니다." : 
+                    "<strong>It is highly likely that you can file for divorce in a South Korean court.</strong><br>Your case shows a substantial connection to South Korea. Please prepare for the specific legal procedures.";
+            } 
+            // 원고만 한국인이거나 그 외의 경우 관할권 다툼의 여지가 있음
+            else if (q2 === 'yes') {
+                resultDiv.className = 'result-warning';
+                resultDiv.innerHTML = currentLang === 'ko' ? 
+                    "<strong>한국 법원의 관할권이 인정될 여지가 있으나, 추가적인 검토가 필요합니다.</strong><br>피고가 해외에 거주하더라도 원고가 한국인인 경우 유기 등 특정 상황에 따라 관할권이 인정될 수 있습니다." : 
+                    "<strong>South Korean courts may have jurisdiction, but further review is needed.</strong><br>Even if the defendant lives abroad, jurisdiction might be granted under specific circumstances (e.g., desertion) if one spouse is a Korean citizen.";
+            } 
+            // 그 외의 경우
+            else {
+                resultDiv.className = 'result-warning';
+                resultDiv.innerHTML = currentLang === 'ko' ? 
+                    "<strong>한국 법원에 소송을 제기하기 어려울 수 있습니다.</strong><br>대한민국과의 실질적 관련성이 부족하여 관할권이 부정될 수 있습니다. 거주하시는 국가의 법원에 문의하시는 것을 권장합니다." : 
+                    "<strong>It may be difficult to file for divorce in South Korea.</strong><br>Due to a lack of substantial connection, jurisdiction may be denied. It is recommended to inquire with the courts in your country of residence.";
+            }
+        }
+    </script>
+</body>
+</html>

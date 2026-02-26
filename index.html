@@ -2,362 +2,790 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>국제이혼 가이드 | International Divorce Guide</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>국제이혼 가이드 | International Divorce & Jurisdiction Guide</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
         :root {
-            --samsung-black: #000000;
-            --samsung-gray-900: #212124;
-            --samsung-gray-700: #4a4a4a;
-            --samsung-gray-500: #757575;
-            --samsung-gray-200: #e8e8e8;
-            --samsung-gray-100: #f5f5f5;
-            --samsung-white: #ffffff;
-            --samsung-blue: #1428a0;
-            --samsung-blue-hover: #0f1f7a;
-            --section-bg: #fafafa;
-            --card-shadow: 0 2px 24px rgba(0,0,0,0.06);
-            --radius: 12px;
-            --max-content: 1200px;
+            --bg: #050e0b;
+            --bg-card: #0a1a14;
+            --accent: #60a5fa;
+            --accent-sub: #3b82f6;
+            --accent-glow: rgba(96, 165, 250, 0.12);
+            --gold: #e8c44a;
+            --gold-sub: #f5d76e;
+            --warn: #e85d3b;
+            --safe: #4ade80;
+            --text-primary: #eaf6f1;
+            --text-secondary: #93b5a6;
+            --text-muted: #4d7565;
+            --border: rgba(255,255,255,0.06);
         }
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-weight: 400;
-            line-height: 1.65;
-            margin: 0;
-            padding: 0;
-            background: var(--samsung-white);
-            color: var(--samsung-gray-900);
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-font-smoothing: antialiased;
-        }
-        .header-wrap {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--samsung-white);
-            border-bottom: 1px solid var(--samsung-gray-200);
-            box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-        }
-        header {
-            max-width: var(--max-content);
-            margin: 0 auto;
-            padding: 1rem 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        header h1 {
-            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-            font-weight: 600;
-            color: var(--samsung-black);
-            margin: 0;
-            letter-spacing: -0.02em;
-        }
-        .lang-switch {
-            display: flex;
-            gap: 0;
-            border: 1px solid var(--samsung-gray-200);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .lang-btn {
-            background: var(--samsung-white);
-            color: var(--samsung-gray-700);
-            border: none;
-            padding: 8px 16px;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.2s, color 0.2s;
-        }
-        .lang-btn:hover { background: var(--samsung-gray-100); color: var(--samsung-gray-900); }
-        .lang-btn.active {
-            background: var(--samsung-black);
-            color: var(--samsung-white);
-        }
-        .hero {
-            max-width: var(--max-content);
-            margin: 0 auto;
-            padding: 64px 24px 56px;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 700;
-            color: var(--samsung-black);
-            margin: 0 0 12px;
+            background: var(--bg);
+            color: var(--text-primary);
             letter-spacing: -0.03em;
-            line-height: 1.25;
+            word-break: keep-all;
+            overflow-x: hidden;
         }
-        .hero p {
-            font-size: 1rem;
-            color: var(--samsung-gray-500);
-            margin: 0;
-            max-width: 560px;
-            margin-left: auto;
+        a { text-decoration: none; color: inherit; }
+
+        /* ─── TOP NAV ─── */
+        .topnav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: 1100;
+            background: rgba(5,14,11,0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .topnav-inner {
+            max-width: 520px; margin: 0 auto;
+            display: flex; align-items: center;
+            padding: 0 20px; height: 52px;
+        }
+        .topnav-brand {
+            font-size: 0.82rem; font-weight: 700;
+            color: var(--accent);
             margin-right: auto;
         }
-        .section {
-            width: 100%;
-            padding: 56px 24px 64px;
-            background: var(--section-bg);
+        .topnav-links { display: flex; gap: 4px; list-style: none; }
+        .topnav-links a {
+            font-size: 0.7rem; font-weight: 600; color: var(--text-muted);
+            padding: 6px 10px; border-radius: 8px;
+            transition: color 0.2s, background 0.2s;
         }
-        .section:nth-of-type(2) { background: var(--samsung-white); }
-        .section-inner {
-            max-width: var(--max-content);
-            margin: 0 auto;
+        .topnav-links a:hover, .topnav-links a.active { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+        .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-left: 8px; }
+        .lang-toggle button {
+            padding: 5px 10px; font-size: 0.68rem; font-weight: 600;
+            background: transparent; border: none; color: var(--text-muted);
+            cursor: pointer; font-family: inherit;
         }
-        .section-title {
-            font-size: clamp(1.375rem, 3vw, 1.75rem);
-            font-weight: 700;
-            color: var(--samsung-black);
-            margin: 0 0 32px;
-            letter-spacing: -0.02em;
+        .lang-toggle button.active { background: var(--accent); color: #fff; }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative; min-height: 100vh; min-height: 100dvh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 52px 24px 120px; overflow: hidden;
         }
-        .cards {
-            display: grid;
-            gap: 20px;
+        .hero-orb {
+            position: absolute; width: 420px; height: 420px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(96,165,250,0.14) 0%, rgba(59,130,246,0.04) 40%, transparent 70%);
+            top: 12%; left: 50%; transform: translateX(-50%);
+            filter: blur(60px); animation: orbFloat 8s ease-in-out infinite; pointer-events: none;
         }
-        .case-card {
-            background: var(--samsung-white);
-            padding: 28px 32px;
-            border-radius: var(--radius);
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: box-shadow 0.25s ease;
+        .hero-orb-2 {
+            position: absolute; width: 300px; height: 300px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(96,165,250,0.06) 0%, transparent 70%);
+            bottom: 15%; right: -60px; filter: blur(80px);
+            animation: orbFloat 10s ease-in-out infinite reverse; pointer-events: none;
         }
-        .case-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
-        .case-card h3 {
-            font-size: 1.0625rem;
-            font-weight: 600;
-            color: var(--samsung-black);
-            margin: 0 0 12px;
-            letter-spacing: -0.01em;
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 20px;
+            background: rgba(96,165,250,0.08); border: 1px solid rgba(96,165,250,0.22);
+            border-radius: 100px; font-size: 0.73rem; font-weight: 600;
+            color: var(--accent); letter-spacing: 0.02em;
+            margin-bottom: 28px; position: relative; z-index: 1;
         }
-        .case-card p {
-            font-size: 0.9375rem;
-            color: var(--samsung-gray-700);
-            margin: 0;
-            line-height: 1.7;
+        .hero-badge::before {
+            content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
         }
-        .test-intro {
-            font-size: 0.9375rem;
-            color: var(--samsung-gray-500);
-            margin: 0 0 28px;
-            max-width: 640px;
+        .hero-title {
+            font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 800;
+            line-height: 1.25; color: #fff; position: relative; z-index: 1; margin-bottom: 16px;
         }
-        .test-form {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-        .question-block {
-            padding: 20px 24px;
-            background: var(--samsung-gray-100);
-            border-radius: var(--radius);
-            border: 1px solid transparent;
-            transition: background 0.2s, border-color 0.2s;
-        }
-        .question-block:focus-within {
-            background: var(--samsung-white);
-            border-color: var(--samsung-gray-200);
-            box-shadow: var(--card-shadow);
-        }
-        .question {
-            font-size: 0.9375rem;
-            font-weight: 600;
-            color: var(--samsung-gray-900);
-            margin-bottom: 12px;
+        .hero-title .em {
             display: block;
+            background: linear-gradient(135deg, var(--accent), var(--accent-sub));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .question-block label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9375rem;
-            color: var(--samsung-gray-700);
-            cursor: pointer;
-            margin-right: 20px;
+        .hero-desc {
+            font-size: 1rem; color: var(--text-secondary); line-height: 1.65; max-width: 340px;
+            position: relative; z-index: 1; margin-bottom: 36px;
         }
-        .question-block input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--samsung-blue);
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent-sub), var(--accent));
+            color: #fff; font-size: 1rem; font-weight: 700;
+            border: none; border-radius: 60px; cursor: pointer;
+            position: relative; z-index: 1;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 0 40px rgba(96,165,250,0.25);
         }
-        .btn-submit {
-            background: var(--samsung-blue);
-            color: var(--samsung-white);
-            border: none;
-            padding: 14px 28px;
-            font-size: 0.9375rem;
-            font-weight: 600;
+        .hero-cta:active { transform: scale(0.97); }
+        .hero-cta svg { width: 18px; height: 18px; }
+        .scroll-hint {
+            position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: var(--text-muted); font-size: 0.6rem; letter-spacing: 0.12em;
+            animation: scrollHint 2s ease-in-out infinite;
+        }
+        .scroll-hint span { width: 1px; height: 20px; background: var(--text-muted); opacity: 0.4; }
+
+        /* ─── COMMON ─── */
+        .section { max-width: 520px; margin: 0 auto; padding: 0 20px; }
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 60px auto; max-width: 200px;
+        }
+        .sec-label {
+            font-size: 0.72rem; font-weight: 600; color: var(--accent); letter-spacing: 0.1em;
+            text-transform: uppercase; margin-bottom: 10px;
+        }
+        .sec-title { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1.4; }
+        .sec-head { text-align: center; margin-bottom: 28px; }
+
+        /* ─── CASE CARDS (절차 안내) ─── */
+        .cases { padding: 40px 0 60px; }
+        .case-card {
+            background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(255,255,255,0.008));
+            border: 1px solid var(--border); border-radius: 20px;
+            padding: 24px 20px; margin-bottom: 14px;
+            position: relative; overflow: hidden;
+        }
+        .case-card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 3px; height: 100%;
+            background: linear-gradient(180deg, var(--accent), transparent);
+        }
+        .case-card .case-icon {
+            width: 48px; height: 48px;
+            background: rgba(96,165,250,0.12); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 14px;
+        }
+        .case-card .case-icon svg { width: 26px; height: 26px; stroke: var(--accent); fill: none; }
+        .case-tag {
+            display: inline-block; padding: 4px 10px;
+            background: rgba(96,165,250,0.12); border-radius: 6px;
+            font-size: 0.68rem; font-weight: 600; color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .case-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .case-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+        .case-steps {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+        }
+        .case-step {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.72rem; color: var(--accent);
+            padding: 6px 12px; background: rgba(96,165,250,0.08);
             border-radius: 8px;
-            cursor: pointer;
-            font-family: inherit;
-            align-self: flex-start;
-            transition: background 0.2s;
         }
-        .btn-submit:hover { background: var(--samsung-blue-hover); }
-        #test-result {
-            margin-top: 24px;
-            padding: 24px 28px;
-            border-radius: var(--radius);
-            font-size: 0.9375rem;
-            line-height: 1.7;
-            display: none;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(0,0,0,0.04);
+        .case-step svg { width: 14px; height: 14px; stroke: var(--accent); flex-shrink: 0; }
+
+        /* ─── 테스트 섹션 (정교한 퀴즈) ─── */
+        .test-wrap { padding: 40px 0 60px; }
+        .test-progress {
+            display: flex; align-items: center; gap: 8px; margin-bottom: 24px;
+            font-size: 0.72rem; color: var(--text-muted);
         }
-        .result-success {
-            background: #e8f4fc;
-            color: #0c4c8c;
-            border-color: rgba(20,40,160,0.15);
+        .test-progress-bar {
+            flex: 1; height: 6px; background: rgba(255,255,255,0.08); border-radius: 100px; overflow: hidden;
         }
-        .result-warning {
-            background: #fff8e6;
-            color: #7a5a00;
-            border-color: rgba(220,165,0,0.2);
+        .test-progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--accent-sub), var(--accent));
+            border-radius: 100px; transition: width 0.4s ease;
         }
+        .test-q-block {
+            background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            border: 1px solid var(--border); border-radius: 18px;
+            padding: 22px 20px; margin-bottom: 14px;
+        }
+        .test-q-num {
+            font-size: 0.68rem; font-weight: 700; color: var(--accent); letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+        .test-q-text {
+            font-size: 0.9rem; font-weight: 600; color: #fff; line-height: 1.5; margin-bottom: 16px;
+        }
+        .test-q-options { display: flex; flex-direction: column; gap: 10px; }
+        .test-q-options label {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: 12px; font-size: 0.85rem; color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .test-q-options label:hover {
+            background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.25);
+        }
+        .test-q-options label:has(input:checked) {
+            background: rgba(96,165,250,0.12); border-color: var(--accent);
+            color: var(--accent);
+        }
+        .test-q-options input[type="radio"] {
+            width: 20px; height: 20px; accent-color: var(--accent); flex-shrink: 0;
+        }
+        .test-submit-wrap { text-align: center; margin-top: 28px; }
+        .test-submit {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--accent-sub), var(--accent));
+            color: #fff; font-size: 0.95rem; font-weight: 700;
+            border: none; border-radius: 60px; cursor: pointer;
+            box-shadow: 0 0 32px rgba(96,165,250,0.25);
+            transition: transform 0.2s;
+        }
+        .test-submit:active { transform: scale(0.97); }
+        .test-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+        .test-result-box {
+            display: none; margin-top: 28px;
+            background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid var(--border); border-radius: 20px;
+            padding: 28px 24px; overflow: hidden;
+        }
+        .test-result-box.show { display: block; animation: stepIn 0.5s ease; }
+        .test-result-tier {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 16px; border-radius: 100px;
+            font-size: 0.8rem; font-weight: 700; margin-bottom: 16px;
+        }
+        .test-result-tier.high {
+            background: rgba(59,232,122,0.15); color: var(--safe);
+        }
+        .test-result-tier.mid {
+            background: rgba(232,196,74,0.15); color: var(--gold);
+        }
+        .test-result-tier.low {
+            background: rgba(232,93,59,0.15); color: var(--warn);
+        }
+        .test-result-title { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+        .test-result-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+        .test-result-score {
+            font-size: 0.75rem; color: var(--text-muted); margin-top: 14px;
+        }
+
+        /* ─── FAQ 아코디언 ─── */
+        .faq-list { padding: 40px 0 60px; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-item:first-child { border-top: 1px solid var(--border); }
+        .faq-q {
+            width: 100%; background: transparent; border: none;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 20px 0; cursor: pointer; font-family: inherit; text-align: left;
+            color: var(--text-primary); font-size: 0.9rem; font-weight: 500;
+        }
+        .faq-q .arrow {
+            width: 20px; height: 20px; position: relative; flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        .faq-q .arrow::before, .faq-q .arrow::after {
+            content: ''; position: absolute; background: var(--text-muted);
+            border-radius: 2px; transition: transform 0.3s;
+        }
+        .faq-q .arrow::before { width: 12px; height: 2px; top: 9px; left: 4px; }
+        .faq-q .arrow::after { width: 2px; height: 12px; top: 4px; left: 9px; }
+        .faq-item.open .faq-q .arrow { transform: rotate(90deg); }
+        .faq-a {
+            max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+        }
+        .faq-item.open .faq-a { max-height: 320px; }
+        .faq-a p {
+            font-size: 0.82rem; color: var(--text-secondary); line-height: 1.7;
+            padding: 0 0 20px 0;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            text-align: center; padding: 30px 20px 100px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand { font-size: 0.9rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; }
+        .footer-sub { font-size: 0.72rem; color: var(--text-muted); line-height: 1.7; }
+
+        /* ─── DOCK ─── */
+        .dock {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(5,14,11,0.92); backdrop-filter: blur(24px);
+            border-top: 1px solid var(--border); z-index: 1000;
+            padding: 0 0 env(safe-area-inset-bottom);
+        }
+        .dock-inner { max-width: 520px; margin: 0 auto; display: flex; }
+        .dock-item {
+            flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px;
+            padding: 10px 0 12px; color: var(--text-muted);
+            font-size: 0.63rem; font-weight: 500; transition: color 0.2s;
+        }
+        .dock-item:hover, .dock-item.active { color: var(--accent); }
+        .dock-item svg { width: 19px; height: 19px; }
+
+        /* ─── 플로팅 버튼 (원스톱 + 카카오) ─── */
+        .float-group {
+            position: fixed; bottom: 76px; right: 16px;
+            display: flex; flex-direction: column; gap: 10px;
+            z-index: 999;
+        }
+        .float-btn {
+            display: flex; align-items: center; gap: 8px;
+            padding: 12px 18px 12px 14px;
+            border-radius: 50px; text-decoration: none;
+            font-size: 0.78rem; font-weight: 700;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+            transition: transform 0.2s;
+        }
+        .float-btn:active { transform: scale(0.94); }
+        .float-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+        .float-onestop {
+            background: rgba(10,26,20,0.92);
+            border: 1px solid rgba(96,165,250,0.25);
+            color: var(--accent);
+            cursor: pointer; font-family: inherit;
+        }
+        .float-onestop svg { stroke: var(--accent); fill: none; }
+        .float-kakao {
+            background: #FEE500; color: #3C1E1E;
+        }
+        .float-kakao svg { fill: #3C1E1E; }
+        /* ─── 원스톱 모달 ─── */
+        .modal-bg {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+            display: none; z-index: 2000;
+        }
+        .modal-bg.show { display: block; }
+        .modal-onestop {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+            width: 90%; max-width: 360px;
+            background: linear-gradient(160deg, #0c1820, #081218);
+            border: 1px solid rgba(96,165,250,0.15); border-radius: 24px;
+            padding: 28px 22px 24px;
+            display: none; z-index: 2001;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+        }
+        .modal-onestop.show { display: block; }
+        .modal-onestop .modal-close {
+            position: absolute; top: 14px; right: 16px;
+            background: none; border: none;
+            color: var(--text-muted); font-size: 1.4rem; cursor: pointer; line-height: 1;
+        }
+        .modal-onestop h3 {
+            font-size: 1.05rem; font-weight: 700; color: var(--accent);
+            margin-bottom: 12px; padding-right: 28px;
+        }
+        .modal-onestop p {
+            font-size: 0.85rem; color: var(--text-secondary);
+            line-height: 1.65;
+        }
+        .modal-onestop .modal-cta {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            margin-top: 18px; padding: 12px 20px;
+            background: #FEE500; color: #3C1E1E;
+            border-radius: 12px; font-size: 0.9rem; font-weight: 700;
+            text-decoration: none;
+        }
+        .modal-onestop .modal-cta svg { width: 20px; height: 20px; fill: #3C1E1E; }
+
+        @keyframes orbFloat {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-30px); }
+        }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @keyframes scrollHint {
+            0%,100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(8px); }
+        }
+        @keyframes stepIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-    <div class="header-wrap">
-        <header>
-            <h1 data-ko="국제이혼 절차 및 관할권 가이드" data-en="International Divorce & Jurisdiction Guide">국제이혼 절차 및 관할권 가이드</h1>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLanguage('ko')">KOR</button>
-                <button class="lang-btn" onclick="setLanguage('en')">ENG</button>
-            </div>
-        </header>
+<header class="topnav">
+    <div class="topnav-inner">
+        <a href="#hero" class="topnav-brand" data-ko="법률사무소 합의 · 국제이혼 가이드" data-en="Law Office Hapui · Int'l Divorce Guide">법률사무소 합의 · 국제이혼 가이드</a>
+        <nav class="topnav-links">
+            <a href="#procedures" data-ko="절차" data-en="Procedures">절차</a>
+            <a href="#test" data-ko="테스트" data-en="Test">테스트</a>
+            <a href="#faq" data-ko="FAQ" data-en="FAQ">FAQ</a>
+        </nav>
+        <div class="lang-toggle">
+            <button type="button" class="active" onclick="setLang('ko')">KOR</button>
+            <button type="button" onclick="setLang('en')">ENG</button>
+        </div>
     </div>
+</header>
 
-    <section class="hero">
-        <h2 data-ko="혼인신고 국가별 이혼 절차" data-en="Divorce Procedures by Marriage Registration Country">혼인신고 국가별 이혼 절차</h2>
-        <p data-ko="어디에서 혼인신고를 했는지에 따라 이혼 절차가 달라집니다. 아래 유형을 확인해 보세요." data-en="Divorce procedures vary depending on where you registered your marriage. Review the cases below."></p>
+<section class="hero" id="hero">
+    <div class="hero-orb" aria-hidden="true"></div>
+    <div class="hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-badge" data-ko="법률사무소 합의 진행" data-en="By Law Office Hapui">법률사무소 합의 진행</div>
+    <h1 class="hero-title">
+        <span data-ko="한국 법원에서" data-en="Can I get divorced">한국 법원에서</span><br>
+        <span class="em" data-ko="이혼 소송이 가능할까?" data-en="in a Korean court?">이혼 소송이 가능할까?</span>
+    </h1>
+    <p class="hero-desc" data-ko="혼인신고 국가별 이혼 절차와 관할권 가능성을&#10;간단 테스트로 확인하세요" data-en="Check divorce procedures by country and&#10;jurisdiction with a short test">혼인신고 국가별 이혼 절차와 관할권 가능성을<br>간단 테스트로 확인하세요</p>
+    <a href="#test" class="hero-cta">
+        <span data-ko="관할권 테스트 시작" data-en="Start Jurisdiction Test">관할권 테스트 시작</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="scroll-hint" aria-hidden="true">SCROLL<span></span></div>
+</section>
+
+<div class="section reveal">
+    <section class="cases" id="procedures" aria-label="이혼 절차">
+        <div class="sec-head">
+            <p class="sec-label" data-ko="절차 안내" data-en="PROCEDURES">절차 안내</p>
+            <h2 class="sec-title" data-ko="혼인신고 국가별 이혼 절차" data-en="Divorce by Marriage Registration">혼인신고 국가별<br>이혼 절차</h2>
+        </div>
+        <article class="case-card">
+            <div class="case-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <span class="case-tag" data-ko="한국 단일" data-en="Korea only">한국 단일</span>
+            <h3 class="case-title" data-ko="한국에서만 혼인신고를 한 경우" data-en="Registered only in South Korea">한국에서만 혼인신고를 한 경우</h3>
+            <p class="case-desc" data-ko="한국 법원의 관할권이 인정되면 협의이혼 또는 재판상 이혼 절차를 따릅니다. 이혼 성립 시 가족관계등록부가 정리되며 절차가 종결됩니다." data-en="If Korean courts have jurisdiction, follow mutual agreement or judicial divorce. Once finalized, the family registry is updated and the process ends.">한국 법원의 관할권이 인정되면 협의이혼 또는 재판상 이혼 절차를 따릅니다. 이혼 성립 시 가족관계등록부가 정리되며 절차가 종결됩니다.</p>
+            <div class="case-steps">
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="법원 관할 확인" data-en="Court jurisdiction">법원 관할 확인</span></span>
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="협의 또는 소송" data-en="Agreement or suit">협의 또는 소송</span></span>
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="가족관계등록부 정리" data-en="Registry update">가족관계등록부 정리</span></span>
+            </div>
+        </article>
+        <article class="case-card">
+            <div class="case-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <span class="case-tag" data-ko="외국 단일" data-en="Abroad only">외국 단일</span>
+            <h3 class="case-title" data-ko="외국에서만 혼인신고를 한 경우" data-en="Registered only abroad">외국에서만 혼인신고를 한 경우</h3>
+            <p class="case-desc" data-ko="실질적 혼인 관계와 한국 법원 관할권이 있으면 한국에서 재판상 이혼 청구가 가능합니다. 이혼 판결문을 번역·공증하여 해당 외국 관청에 제출(승인)해야 그 나라에서도 이혼이 유효해집니다." data-en="If there is a de facto marriage and Korean jurisdiction, you can file for divorce in Korea. The ruling must be translated, notarized, and recognized by the foreign authority.">실질적 혼인 관계와 한국 법원 관할권이 있으면 한국에서 재판상 이혼 청구가 가능합니다. 이혼 판결문을 번역·공증하여 해당 외국 관청에 제출(승인)해야 그 나라에서도 이혼이 유효해집니다.</p>
+            <div class="case-steps">
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="한국에서 재판상 이혼" data-en="Judicial divorce in KR">한국에서 재판상 이혼</span></span>
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="판결문 번역·공증" data-en="Translate & notarize">판결문 번역·공증</span></span>
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="외국 관청 제출" data-en="Submit abroad">외국 관청 제출</span></span>
+            </div>
+        </article>
+        <article class="case-card">
+            <div class="case-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="case-tag" data-ko="양국" data-en="Both">양국</span>
+            <h3 class="case-title" data-ko="양국 모두 혼인신고를 한 경우" data-en="Registered in both countries">양국 모두 혼인신고를 한 경우</h3>
+            <p class="case-desc" data-ko="양국에서 모두 이혼 효력을 발생시켜야 합니다. 한국에서 먼저 이혼 판결을 받은 경우, 판결문을 번역·아포스티유(또는 영사 확인) 후 외국 관청에 이혼 신고를 해야 양국에서 완전히 이혼이 성립됩니다." data-en="The divorce must be recognized in both countries. If you get a Korean ruling first, translate it, get an Apostille or consular legalization, and report to the foreign authority.">양국에서 모두 이혼 효력을 발생시켜야 합니다. 한국에서 먼저 이혼 판결을 받은 경우, 판결문을 번역·아포스티유(또는 영사 확인) 후 외국 관청에 이혼 신고를 해야 양국에서 완전히 이혼이 성립됩니다.</p>
+            <div class="case-steps">
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="한국 이혼 판결" data-en="KR divorce ruling">한국 이혼 판결</span></span>
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="아포스티유·영사확인" data-en="Apostille·Consular">아포스티유·영사확인</span></span>
+                <span class="case-step"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-ko="양국 신고 완료" data-en="Report in both">양국 신고 완료</span></span>
+            </div>
+        </article>
     </section>
+</div>
 
-    <section class="section">
-        <div class="section-inner">
-            <h2 class="section-title" data-ko="절차 유형별 안내" data-en="Guide by Procedure Type">절차 유형별 안내</h2>
-            <div class="cards">
-                <div class="case-card">
-                    <h3 data-ko="1. 한국에서만 혼인신고를 한 경우" data-en="1. Registered Only in South Korea">1. 한국에서만 혼인신고를 한 경우</h3>
-                    <p data-ko="한국 법원의 관할권이 인정된다면, 일반적인 한국의 이혼 절차(협의이혼 또는 재판상 이혼)를 따릅니다. 이혼이 성립되면 한국 가족관계등록부가 정리되며 절차가 종결됩니다." 
-                       data-en="If Korean courts have jurisdiction, standard Korean divorce procedures (mutual agreement or judicial divorce) apply. Once finalized, the Korean family registry is updated, and the process is complete."></p>
+<div class="divider"></div>
+
+<div class="section reveal">
+    <section class="test-wrap" id="test">
+        <div class="sec-head">
+            <p class="sec-label" data-ko="관할권 테스트" data-en="JURISDICTION TEST">관할권 테스트</p>
+            <h2 class="sec-title" data-ko="한국 법원 이혼 가능 여부" data-en="Can I file in Korea?">한국 법원 이혼<br>가능 여부</h2>
+        </div>
+        <p class="test-progress">
+            <span id="progress-text" data-ko="진행률" data-en="Progress">진행률</span>
+            <span id="progress-num">0/6</span>
+        </p>
+        <div class="test-progress-bar">
+            <div class="test-progress-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+
+        <form id="jTest">
+            <div class="test-q-block">
+                <div class="test-q-num" data-ko="질문 1" data-en="Q1">질문 1</div>
+                <div class="test-q-text" data-ko="피고(이혼 소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?" data-en="Does the defendant (your spouse) currently reside in South Korea?">피고(이혼 소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?</div>
+                <div class="test-q-options">
+                    <label><input type="radio" name="q1" value="yes"><span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q1" value="no"><span data-ko="아니오" data-en="No">아니오</span></label>
                 </div>
-                <div class="case-card">
-                    <h3 data-ko="2. 외국에서만 혼인신고를 한 경우" data-en="2. Registered Only in a Foreign Country">2. 외국에서만 혼인신고를 한 경우</h3>
-                    <p data-ko="한국에 혼인신고가 되어 있지 않더라도, 실질적인 혼인 관계가 있고 한국 법원에 관할권이 있다면 한국 법원에서 재판상 이혼 청구가 가능합니다. 한국 법원의 이혼 판결문을 번역 및 공증하여 해당 외국 관청에 제출(승인 절차)해야 해당 국가에서도 이혼이 유효해집니다." 
-                       data-en="Even without Korean registration, if a de facto marriage exists and Korean courts have jurisdiction, you can file for divorce in Korea. To make it valid in the foreign country, the Korean court's ruling must be translated, notarized, and recognized by the foreign authorities."></p>
+            </div>
+            <div class="test-q-block">
+                <div class="test-q-num" data-ko="질문 2" data-en="Q2">질문 2</div>
+                <div class="test-q-text" data-ko="원고(본인)가 현재 대한민국에 거주하고 있습니까?" data-en="Do you (the plaintiff) currently reside in South Korea?">원고(본인)가 현재 대한민국에 거주하고 있습니까?</div>
+                <div class="test-q-options">
+                    <label><input type="radio" name="q2" value="yes"><span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q2" value="no"><span data-ko="아니오" data-en="No">아니오</span></label>
                 </div>
-                <div class="case-card">
-                    <h3 data-ko="3. 양국 모두 혼인신고를 한 경우" data-en="3. Registered in Both Countries">3. 양국 모두 혼인신고를 한 경우</h3>
-                    <p data-ko="양국에서 모두 이혼의 효력을 발생시켜야 합니다. 한국에서 먼저 이혼 판결을 받은 경우, 그 판결문을 외국어로 번역 및 아포스티유(또는 영사 확인)를 받아 외국 관청에 이혼 신고를 해야 양국에서 완전한 이혼이 성립됩니다." 
-                       data-en="The divorce must be legally recognized in both nations. If you obtain a divorce ruling in Korea first, you must translate the decree, get an Apostille (or consular legalization), and report it to the foreign authority to finalize the divorce in both countries."></p>
+            </div>
+            <div class="test-q-block">
+                <div class="test-q-num" data-ko="질문 3" data-en="Q3">질문 3</div>
+                <div class="test-q-text" data-ko="부부 중 최소 한 명이 대한민국 국민입니까?" data-en="Is at least one spouse a South Korean citizen?">부부 중 최소 한 명이 대한민국 국민입니까?</div>
+                <div class="test-q-options">
+                    <label><input type="radio" name="q3" value="yes"><span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q3" value="no"><span data-ko="아니오" data-en="No">아니오</span></label>
                 </div>
+            </div>
+            <div class="test-q-block">
+                <div class="test-q-num" data-ko="질문 4" data-en="Q4">질문 4</div>
+                <div class="test-q-text" data-ko="부부가 마지막으로 함께 살던 곳이 대한민국입니까?" data-en="Was your last shared marital residence in South Korea?">부부가 마지막으로 함께 살던 곳이 대한민국입니까?</div>
+                <div class="test-q-options">
+                    <label><input type="radio" name="q4" value="yes"><span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q4" value="no"><span data-ko="아니오" data-en="No">아니오</span></label>
+                </div>
+            </div>
+            <div class="test-q-block">
+                <div class="test-q-num" data-ko="질문 5" data-en="Q5">질문 5</div>
+                <div class="test-q-text" data-ko="혼인신고를 대한민국에서 하였습니까?" data-en="Did you register your marriage in South Korea?">혼인신고를 대한민국에서 하였습니까?</div>
+                <div class="test-q-options">
+                    <label><input type="radio" name="q5" value="yes"><span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q5" value="no"><span data-ko="아니오" data-en="No">아니오</span></label>
+                </div>
+            </div>
+            <div class="test-q-block">
+                <div class="test-q-num" data-ko="질문 6" data-en="Q6">질문 6</div>
+                <div class="test-q-text" data-ko="이혼 소송에서 다툴 재산·자녀 등이 주로 대한민국에 있습니까?" data-en="Are the main assets or children in dispute located in South Korea?">이혼 소송에서 다툴 재산·자녀 등이 주로 대한민국에 있습니까?</div>
+                <div class="test-q-options">
+                    <label><input type="radio" name="q6" value="yes"><span data-ko="예" data-en="Yes">예</span></label>
+                    <label><input type="radio" name="q6" value="no"><span data-ko="해당 없음 / 아니오" data-en="N/A or No">해당 없음 / 아니오</span></label>
+                </div>
+            </div>
+            <div class="test-submit-wrap">
+                <button type="button" class="test-submit" id="btnSubmit" onclick="calcResult()" data-ko="결과 확인하기" data-en="See Result">결과 확인하기</button>
+            </div>
+        </form>
+
+        <div class="test-result-box" id="resultBox">
+            <div class="test-result-tier" id="resultTier"></div>
+            <div class="test-result-title" id="resultTitle"></div>
+            <div class="test-result-desc" id="resultDesc"></div>
+            <div class="test-result-score" id="resultScore"></div>
+        </div>
+    </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="section reveal">
+    <section class="faq-list" id="faq">
+        <div class="sec-head">
+            <p class="sec-label" data-ko="FAQ" data-en="FAQ">FAQ</p>
+            <h2 class="sec-title" data-ko="자주 묻는 질문" data-en="Frequently Asked">자주 묻는 질문</h2>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" type="button" onclick="toggleFaq(this)">
+                <span data-ko="협의이혼과 재판상 이혼의 차이는?" data-en="Difference between agreement and judicial divorce?">협의이혼과 재판상 이혼의 차이는?</span>
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-a">
+                <p data-ko="협의이혼은 양측 합의 후 법원 확인을 받는 절차이고, 재판상 이혼은 한쪽이 반대하거나 합의가 불가능할 때 법원에 소송을 제기하는 절차입니다. 상대가 해외에 있으면 재판상 이혼을 진행하는 경우가 많습니다." data-en="Agreement divorce requires both parties to agree and court confirmation; judicial divorce is when you file a lawsuit. If the other party is abroad, judicial divorce is common.">협의이혼은 양측 합의 후 법원 확인을 받는 절차이고, 재판상 이혼은 한쪽이 반대하거나 합의가 불가능할 때 법원에 소송을 제기하는 절차입니다. 상대가 해외에 있으면 재판상 이혼을 진행하는 경우가 많습니다.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" type="button" onclick="toggleFaq(this)">
+                <span data-ko="외국 이혼 판결이 한국에서도 유효한가요?" data-en="Is a foreign divorce ruling valid in Korea?">외국 이혼 판결이 한국에서도 유효한가요?</span>
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-a">
+                <p data-ko="민사소송법 제217조 요건(관할권, 송달, 공서양속, 상호보증)을 충족하면 한국에서도 효력이 인정됩니다. 가족관계등록부 반영 시 외국 판결문 번역본·확정증명서를 시·구청에 제출해야 합니다." data-en="If the ruling meets Art. 217 Civil Procedure Act requirements, it is recognized in Korea. To update the registry, submit a translated ruling and certificate of finality to the local office.">민사소송법 제217조 요건(관할권, 송달, 공서양속, 상호보증)을 충족하면 한국에서도 효력이 인정됩니다. 가족관계등록부 반영 시 외국 판결문 번역본·확정증명서를 시·구청에 제출해야 합니다.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" type="button" onclick="toggleFaq(this)">
+                <span data-ko="아포스티유(Apostille)란?" data-en="What is an Apostille?">아포스티유(Apostille)란?</span>
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-a">
+                <p data-ko="헤이그 협약에 따른 공문서 인증 제도로, 영사 확인 없이 협약국 간 문서가 인정되게 합니다. 한국 이혼 판결문에 외교부 아포스티유를 받으면 협약 가입국에서 바로 효력이 인정됩니다." data-en="A certification under the Hague Convention so documents are recognized between member countries without consular legalization. A Korean decree with an Apostille is valid in member countries.">헤이그 협약에 따른 공문서 인증 제도로, 영사 확인 없이 협약국 간 문서가 인정되게 합니다. 한국 이혼 판결문에 외교부 아포스티유를 받으면 협약 가입국에서 바로 효력이 인정됩니다.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" type="button" onclick="toggleFaq(this)">
+                <span data-ko="상대방이 해외에 있어 송달이 안 되면?" data-en="What if the other party is abroad?">상대방이 해외에 있어 송달이 안 되면?</span>
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-a">
+                <p data-ko="주소를 알면 해당국 중앙당국·영사 송달을 이용하고, 주소를 모르면 공시송달을 신청할 수 있습니다. 관보·법원 게시판에 일정 기간 공고 후 송달 완료로 간주됩니다." data-en="If you know the address, use the central authority or consular service. If unknown, you can apply for service by public notice.">주소를 알면 해당국 중앙당국·영사 송달을 이용하고, 주소를 모르면 공시송달을 신청할 수 있습니다. 관보·법원 게시판에 일정 기간 공고 후 송달 완료로 간주됩니다.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" type="button" onclick="toggleFaq(this)">
+                <span data-ko="국제이혼 절차 기간은?" data-en="How long does it take?">국제이혼 절차 기간은?</span>
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-a">
+                <p data-ko="해외 송달만 3~6개월 걸릴 수 있어 국내보다 오래 걸립니다. 공시송달도 2~3개월 공고가 필요하며, 전체적으로 6개월~1년 이상 소요되는 경우가 많습니다." data-en="Overseas service alone can take 3–6 months. Public notice adds 2–3 months. The full process often takes 6 months to over a year.">해외 송달만 3~6개월 걸릴 수 있어 국내보다 오래 걸립니다. 공시송달도 2~3개월 공고가 필요하며, 전체적으로 6개월~1년 이상 소요되는 경우가 많습니다.</p>
             </div>
         </div>
     </section>
+</div>
 
-    <section class="section">
-        <div class="section-inner">
-            <h2 class="section-title" data-ko="한국 법원 이혼 가능 여부 (국제재판관할권) 테스트" data-en="Jurisdiction Test: Can I get a divorce in Korea?">한국 법원 이혼 가능 여부 (국제재판관할권) 테스트</h2>
-            <p class="test-intro" data-ko="대한민국 법원에 이혼 소송을 제기할 수 있는지 간단히 확인해 보세요. (참고용이며 법적 효력은 없습니다.)" 
-               data-en="Check if you can file for divorce in a South Korean court. (For reference only, holds no legal authority.)"></p>
+<footer class="footer">
+    <p class="footer-brand" data-ko="법률사무소 합의" data-en="Law Office Hapui">법률사무소 합의</p>
+    <p class="footer-sub" data-ko="국제이혼 가이드 · 본 콘텐츠는 참고용이며 법적 효력이 없습니다. 구체적인 사안은 전문 변호사와 상담하세요." data-en="International Divorce Guide · For reference only. Consult a lawyer for your specific case.">국제이혼 가이드 · 본 콘텐츠는 참고용이며 법적 효력이 없습니다. 구체적인 사안은 전문 변호사와 상담하세요.</p>
+</footer>
 
-            <form class="test-form" id="jurisdictionTest">
-                <div class="question-block">
-                    <span class="question" data-ko="1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?" data-en="1. Does the defendant (your spouse) currently reside in South Korea?">1. 피고(소송을 당하는 상대방)의 현재 거주지가 대한민국입니까?</span>
-                    <label><input type="radio" name="q1" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
-                    <label><input type="radio" name="q1" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
-                </div>
-                <div class="question-block">
-                    <span class="question" data-ko="2. 부부 중 한 명이 대한민국 국민입니까?" data-en="2. Is at least one spouse a South Korean citizen?">2. 부부 중 한 명이 대한민국 국민입니까?</span>
-                    <label><input type="radio" name="q2" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
-                    <label><input type="radio" name="q2" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
-                </div>
-                <div class="question-block">
-                    <span class="question" data-ko="3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?" data-en="3. Was your last shared marital residence in South Korea, and do you (the plaintiff) currently live in South Korea?">3. 부부가 마지막으로 함께 거주했던 곳이 대한민국이며, 현재 원고(본인)가 대한민국에 거주하고 있습니까?</span>
-                    <label><input type="radio" name="q3" value="yes"> <span data-ko="예" data-en="Yes">예</span></label>
-                    <label><input type="radio" name="q3" value="no"> <span data-ko="아니오" data-en="No">아니오</span></label>
-                </div>
-                <button type="button" class="btn-submit" onclick="calculateResult()" data-ko="결과 확인하기" data-en="Check Result">결과 확인하기</button>
-            </form>
+<!-- 플로팅: 원스톱 안내 + 카카오톡 상담 -->
+<div class="float-group">
+    <button type="button" class="float-btn float-onestop" onclick="openOnestopModal()" aria-label="원스톱 서비스 안내">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span data-ko="원스톱" data-en="One Stop">원스톱</span>
+    </button>
+    <a href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="float-btn float-kakao" aria-label="카카오톡 법률상담">
+        <svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.58 2 11c0 2.83 1.88 5.29 4.71 6.71-.16.57-.58 2.09-.67 2.41-.1.41.15.4.32.29.13-.09 2.04-1.38 2.86-1.94.58.09 1.18.13 1.78.13 5.5 0 10-3.58 10-8s-4.5-8-10-8z"/></svg>
+        <span data-ko="카카오톡 상담" data-en="Kakao Consult">카카오톡 상담</span>
+    </a>
+</div>
 
-            <div id="test-result"></div>
-        </div>
-    </section>
+<!-- 원스톱 모달: 아포스티유·영사확인 한큐에 -->
+<div class="modal-bg" id="onestopModalBg" onclick="closeOnestopModal()"></div>
+<div class="modal-onestop" id="onestopModal">
+    <button type="button" class="modal-close" onclick="closeOnestopModal()">&times;</button>
+    <h3 data-ko="아포스티유·영사확인 한큐에 해결" data-en="Apostille & Consular in One Stop">아포스티유·영사확인 한큐에 해결</h3>
+    <p data-ko="국제이혼 판결문 번역, 외교부 아포스티유, 영사 확인까지 법률사무소 합의에서 한큐에 진행해 드립니다." data-en="Law Office Hapui handles translation, Apostille, and consular legalization in one stop.">국제이혼 판결문 번역, 외교부 아포스티유, 영사 확인까지 법률사무소 합의에서 한큐에 진행해 드립니다.</p>
+    <a href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="modal-cta">
+        <svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.58 2 11c0 2.83 1.88 5.29 4.71 6.71-.16.57-.58 2.09-.67 2.41-.1.41.15.4.32.29.13-.09 2.04-1.38 2.86-1.94.58.09 1.18.13 1.78.13 5.5 0 10-3.58 10-8s-4.5-8-10-8z"/></svg>
+        <span data-ko="카카오톡으로 문의하기" data-en="Ask via Kakao">카카오톡으로 문의하기</span>
+    </a>
+</div>
 
-    <script>
-        let currentLang = 'ko';
+<nav class="dock" aria-label="하단 메뉴">
+    <div class="dock-inner">
+        <a class="dock-item active" href="#hero">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span data-ko="홈" data-en="Home">홈</span>
+        </a>
+        <a class="dock-item" href="#procedures">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-ko="절차" data-en="Procedures">절차</span>
+        </a>
+        <a class="dock-item" href="#test">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+            <span data-ko="테스트" data-en="Test">테스트</span>
+        </a>
+        <a class="dock-item" href="#faq">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>FAQ</span>
+        </a>
+    </div>
+</nav>
 
-        // 언어 변경 함수
-        function setLanguage(lang) {
-            currentLang = lang;
-            
-            // 버튼 스타일 업데이트
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerText.toLowerCase().includes(lang)) {
-                    btn.classList.add('active');
-                }
-            });
+<script>
+var lang = 'ko';
+var TOTAL_Q = 6;
+var WEIGHTS = [2, 1, 1, 2, 1, 1]; // q1~q6 가중치 (피고 거주=2, 원고 거주=1, 국적=1, 마지막 거주=2, 혼인신고=1, 실질관련=1). 최대 8점
 
-            // 텍스트 업데이트
-            document.querySelectorAll('[data-ko]').forEach(el => {
-                el.innerText = el.getAttribute(`data-${lang}`);
-            });
-
-            // 결과창이 열려있다면 결과창 언어도 업데이트
-            const resultDiv = document.getElementById('test-result');
-            if(resultDiv.style.display === 'block') {
-                calculateResult();
-            }
+function setLang(l) {
+    lang = l;
+    document.querySelectorAll('.lang-toggle button').forEach(function(b) {
+        b.classList.toggle('active', b.textContent.toLowerCase().indexOf(l) === 0);
+    });
+    document.querySelectorAll('[data-ko]').forEach(function(el) {
+        var v = el.getAttribute('data-' + l);
+        if (v) {
+            if (el.tagName === 'INPUT') return;
+            if (v.indexOf('&#10;') > -1 || v.indexOf('\n') > -1)
+                el.innerHTML = v.replace(/&#10;/g, '<br>').replace(/\n/g, '<br>');
+            else
+                el.textContent = v;
         }
+    });
+    updateProgress();
+    if (document.getElementById('resultBox').classList.contains('show')) calcResult();
+}
 
-        // 테스트 결과 계산 함수 (대한민국 국제사법 제2조 등 기준 간략화)
-        function calculateResult() {
-            const q1 = document.querySelector('input[name="q1"]:checked')?.value;
-            const q2 = document.querySelector('input[name="q2"]:checked')?.value;
-            const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+function updateProgress() {
+    var filled = 0;
+    for (var i = 1; i <= TOTAL_Q; i++) {
+        if (document.querySelector('input[name="q' + i + '"]:checked')) filled++;
+    }
+    var pct = (filled / TOTAL_Q) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-num').textContent = filled + '/' + TOTAL_Q;
+    var txt = document.getElementById('progress-text');
+    txt.textContent = (lang === 'ko' ? '진행률' : 'Progress');
+}
+document.querySelectorAll('#jTest input[type="radio"]').forEach(function(inp) {
+    inp.addEventListener('change', updateProgress);
+});
 
-            if (!q1 || !q2 || !q3) {
-                alert(currentLang === 'ko' ? "모든 질문에 답해주세요." : "Please answer all questions.");
-                return;
-            }
-
-            const resultDiv = document.getElementById('test-result');
-            resultDiv.style.display = 'block';
-
-            // 피고의 주소지가 한국이거나, 부부의 마지막 거주지가 한국이고 원고가 한국에 있는 경우 관할권 인정 가능성이 매우 높음
-            if (q1 === 'yes' || q3 === 'yes') {
-                resultDiv.className = 'result-success';
-                resultDiv.innerHTML = currentLang === 'ko' ? 
-                    "<strong>한국 법원에 이혼 소송을 진행할 수 있을 가능성이 매우 높습니다.</strong><br>해당 사안은 대한민국과 실질적 관련성이 인정될 확률이 높으므로, 구체적인 절차를 준비하시기 바랍니다." : 
-                    "<strong>It is highly likely that you can file for divorce in a South Korean court.</strong><br>Your case shows a substantial connection to South Korea. Please prepare for the specific legal procedures.";
-            } 
-            // 원고만 한국인이거나 그 외의 경우 관할권 다툼의 여지가 있음
-            else if (q2 === 'yes') {
-                resultDiv.className = 'result-warning';
-                resultDiv.innerHTML = currentLang === 'ko' ? 
-                    "<strong>한국 법원의 관할권이 인정될 여지가 있으나, 추가적인 검토가 필요합니다.</strong><br>피고가 해외에 거주하더라도 원고가 한국인인 경우 유기 등 특정 상황에 따라 관할권이 인정될 수 있습니다." : 
-                    "<strong>South Korean courts may have jurisdiction, but further review is needed.</strong><br>Even if the defendant lives abroad, jurisdiction might be granted under specific circumstances (e.g., desertion) if one spouse is a Korean citizen.";
-            } 
-            // 그 외의 경우
-            else {
-                resultDiv.className = 'result-warning';
-                resultDiv.innerHTML = currentLang === 'ko' ? 
-                    "<strong>한국 법원에 소송을 제기하기 어려울 수 있습니다.</strong><br>대한민국과의 실질적 관련성이 부족하여 관할권이 부정될 수 있습니다. 거주하시는 국가의 법원에 문의하시는 것을 권장합니다." : 
-                    "<strong>It may be difficult to file for divorce in South Korea.</strong><br>Due to a lack of substantial connection, jurisdiction may be denied. It is recommended to inquire with the courts in your country of residence.";
-            }
+function calcResult() {
+    var answers = [];
+    for (var i = 1; i <= TOTAL_Q; i++) {
+        var el = document.querySelector('input[name="q' + i + '"]:checked');
+        if (!el) {
+            alert(lang === 'ko' ? '모든 질문에 답해주세요.' : 'Please answer all questions.');
+            return;
         }
-    </script>
+        answers.push(el.value);
+    }
+    var score = 0;
+    for (var i = 0; i < TOTAL_Q; i++) {
+        if (answers[i] === 'yes') score += WEIGHTS[i];
+    }
+    var maxScore = 8;
+    var percent = Math.round((score / maxScore) * 100);
+
+    var box = document.getElementById('resultBox');
+    var tierEl = document.getElementById('resultTier');
+    var titleEl = document.getElementById('resultTitle');
+    var descEl = document.getElementById('resultDesc');
+    var scoreEl = document.getElementById('resultScore');
+
+    if (percent >= 75) {
+        tierEl.className = 'test-result-tier high';
+        tierEl.textContent = lang === 'ko' ? '관할권 인정 가능성 매우 높음' : 'Very high likelihood';
+        titleEl.textContent = lang === 'ko' ? '한국 법원에서 이혼 소송을 진행할 수 있을 가능성이 매우 높습니다.' : 'It is very likely you can file for divorce in a South Korean court.';
+        descEl.textContent = lang === 'ko'
+            ? '피고의 주소지, 원고의 거주지, 국적, 마지막 공동 거주지 등이 한국과 밀접하게 연결되어 있어 국제사법상 관할권이 인정될 가능성이 큽니다. 이혼 소송 절차와 필요 서류를 준비하시고, 필요 시 변호사 상담을 권합니다.'
+            : 'Defendant residence, plaintiff residence, nationality, and last shared residence strongly connect to Korea, so jurisdiction is likely. Prepare procedures and documents; consider consulting a lawyer.';
+    } else if (percent >= 50) {
+        tierEl.className = 'test-result-tier mid';
+        tierEl.textContent = lang === 'ko' ? '관할권 인정 가능성 있음 (추가 검토)' : 'Moderate likelihood';
+        titleEl.textContent = lang === 'ko' ? '한국 법원의 관할권이 인정될 여지가 있으나, 추가 검토가 필요합니다.' : 'South Korean courts may have jurisdiction, but further review is needed.';
+        descEl.textContent = lang === 'ko'
+            ? '일부 연결 요소(국적, 혼인신고지, 실질적 관련 등)가 있어 관할권이 인정될 수 있으나, 피고가 해외에 있거나 마지막 거주지가 외국인 경우 법원이 관할을 부정할 수도 있습니다. 구체적 사안은 변호사와 상담하시기 바랍니다.'
+            : 'Some connecting factors exist (nationality, marriage registration, etc.), but if the defendant is abroad or last residence was abroad, jurisdiction might be denied. Consult a lawyer for your case.';
+    } else {
+        tierEl.className = 'test-result-tier low';
+        tierEl.textContent = lang === 'ko' ? '관할권 인정 가능성 낮음' : 'Low likelihood';
+        titleEl.textContent = lang === 'ko' ? '한국 법원에 이혼 소송을 제기하기 어려울 수 있습니다.' : 'It may be difficult to file for divorce in South Korea.';
+        descEl.textContent = lang === 'ko'
+            ? '대한민국과의 실질적 관련성이 부족해 관할권이 부정될 가능성이 있습니다. 거주하시는 국가의 법원에 이혼 소송을 제기하거나, 해당 국가 변호사 및 한국 변호사와 상담하여 이혼·재산·자녀 문제를 검토하시기 바랍니다.'
+            : 'Due to insufficient connection to Korea, jurisdiction may be denied. Consider filing in your country of residence or consulting lawyers in both countries.';
+    }
+    scoreEl.textContent = (lang === 'ko' ? '참고 점수 ' : 'Reference score ') + score + '/' + maxScore + ' (' + percent + '%) · ' + (lang === 'ko' ? '법적 효력 없음' : 'No legal effect');
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
+}
+function openOnestopModal() {
+    document.getElementById('onestopModalBg').classList.add('show');
+    document.getElementById('onestopModal').classList.add('show');
+}
+function closeOnestopModal() {
+    document.getElementById('onestopModalBg').classList.remove('show');
+    document.getElementById('onestopModal').classList.remove('show');
+}
+
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+document.querySelectorAll('.dock-item[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('.dock-item').forEach(function(d) { d.classList.remove('active'); });
+        this.classList.add('active');
+    });
+});
+</script>
 </body>
 </html>

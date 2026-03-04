@@ -3,7 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>국제이혼 가이드 | International Divorce & Jurisdiction Guide</title>
+    <title>외국 거주 부부·국제부부 국제이혼 소송 | 한국 법원 진행, 법률사무소 합의</title>
+    <meta name="description" content="외국 거주 부부·국제부부를 위한 국제이혼 소송을 한국 법원에서 비대면으로 진행합니다. 외국인 배우자 이혼, 해외 거주 중 이혼, 재산분할·양육권 전문 상담. 24시간 무료 진단.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://example.com/" id="canonical-url">
+
+    <!-- Open Graph (카카오톡·문자 공유 시 미리보기) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="외국 거주 부부·국제부부 국제이혼 소송 | 한국 법원 진행">
+    <meta property="og:description" content="외국 거주 부부·국제부부를 위한 국제이혼 소송을 한국 법원에서 진행합니다. 해외 거주·외국인 배우자 이혼, 24시간 무료 진단.">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="법률사무소 합의 | 국제이혼">
+
+    <!-- JSON-LD: 전문 서비스 + FAQ (리치 리절트·E-E-A-T) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://example.com/#lawfirm",
+                "name": "법률사무소 합의",
+                "description": "외국 거주 부부·국제부부를 위한 국제이혼 소송, 외국인 배우자 이혼, 해외 거주 중 이혼, 재산분할·양육권을 전문으로 하는 법률 서비스.",
+                "url": "https://example.com/",
+                "areaServed": { "@type": "Country", "name": "KR" },
+                "serviceType": "국제이혼 소송·외국 거주 부부 이혼 자문"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "외국에 거주하는 배우자와 이혼 소송이 가능한가요?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "가능합니다. 피고(배우자)가 해외에 있어도 대한민국 국적·마지막 공동 거주지·혼인신고지 등 관할 연결 요소가 있으면 한국 법원에서 재판상 이혼을 제기할 수 있으며, 공시송달 등으로 진행할 수 있습니다."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "국제이혼 시 재산분할은 어느 나라 법을 따르나요?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "재산분할에 적용될 준거법은 당사자 주소·재산 소재지·혼인 생활 중심지 등에 따라 달라집니다. 한국 법원이 관할을 가지는 경우 대한민국 법이 적용될 수 있으며, 구체적 사안은 변호사와 상담이 필요합니다."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "외국인 배우자가 가출한 경우 이혼 절차는 어떻게 되나요?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "배우자 소재를 알 수 없는 경우 공시송달을 신청할 수 있으며, 관보·법원 게시판 등에 일정 기간 공고한 뒤 송달 완료로 보고 재판을 진행합니다. 한국 법원 관할이 인정되면 귀국 없이 비대면으로 이혼 소송을 진행할 수 있습니다."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
@@ -53,6 +115,13 @@
             color: var(--accent);
             margin-right: auto;
         }
+        .topnav-tag {
+            font-size: 0.68rem; font-weight: 600;
+            color: var(--text-muted);
+            padding: 4px 10px; margin-right: 8px;
+            background: rgba(96,165,250,0.1); border-radius: 100px;
+            white-space: nowrap;
+        }
         .topnav-links { display: flex; gap: 4px; list-style: none; }
         .topnav-links a {
             font-size: 0.7rem; font-weight: 600; color: var(--text-muted);
@@ -99,13 +168,30 @@
             animation: pulse 2s ease-in-out infinite;
         }
         .hero-title {
-            font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 800;
-            line-height: 1.25; color: #fff; position: relative; z-index: 1; margin-bottom: 16px;
+            font-size: clamp(1.4rem, 4.8vw, 2rem);
+            font-weight: 600;
+            line-height: 1.45;
+            letter-spacing: -0.02em;
+            color: rgba(255,255,255,0.96);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            font-feature-settings: "ss01", "ss02";
         }
         .hero-title .em {
             display: block;
             background: linear-gradient(135deg, var(--accent), var(--accent-sub));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-title-sub {
+            font-size: clamp(1.15rem, 4.2vw, 1.9rem);
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+            color: var(--accent);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 18px;
         }
         .hero-desc {
             font-size: 1.05rem; color: var(--text-secondary); line-height: 1.65; max-width: 360px;
@@ -282,6 +368,7 @@
         }
         .test-result-title { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
         .test-result-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+        .test-result-cta { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
         .test-result-score {
             font-size: 0.75rem; color: var(--text-muted); margin-top: 14px;
         }
@@ -342,31 +429,39 @@
 
         /* ─── 플로팅 버튼 (원스톱 + 카카오) ─── */
         .float-group {
-            position: fixed; bottom: 76px; right: 16px;
-            display: flex; flex-direction: column; gap: 10px;
+            position: fixed; bottom: 80px; right: 12px;
+            display: flex; flex-direction: column; gap: 8px;
             z-index: 999;
         }
         .float-btn {
-            display: flex; align-items: center; gap: 8px;
-            padding: 12px 18px 12px 14px;
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 10px 12px;
             border-radius: 50px; text-decoration: none;
-            font-size: 0.78rem; font-weight: 700;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.35);
-            transition: transform 0.2s;
+            font-size: 0.72rem; font-weight: 700;
+            box-shadow: 0 3px 16px rgba(0,0,0,0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+        .float-btn:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
         .float-btn:active { transform: scale(0.94); }
-        .float-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+        .float-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
         .float-onestop {
-            background: rgba(10,26,20,0.92);
+            background: rgba(10,26,20,0.95);
             border: 1px solid rgba(96,165,250,0.25);
             color: var(--accent);
             cursor: pointer; font-family: inherit;
         }
-        .float-onestop svg { stroke: var(--accent); fill: none; }
-        .float-kakao {
-            background: #FEE500; color: #3C1E1E;
+        .float-onestop-icons { font-size: 0.9rem; letter-spacing: 1px; }
+        .float-naver {
+            background: #03c75a; color: #fff;
         }
-        .float-kakao svg { fill: #3C1E1E; }
+        .float-naver-n { font-weight: 800; font-size: 1rem; }
+        .float-consult {
+            background: #fee500;
+            color: #191600;
+            box-shadow: 0 4px 22px rgba(0,0,0,0.35);
+        }
+        .float-consult svg { stroke: none; fill: #191600; }
+        .float-consult:hover { filter: brightness(1.03); }
         /* ─── 원스톱 모달 ─── */
         .modal-bg {
             position: fixed; inset: 0;
@@ -389,20 +484,32 @@
             background: none; border: none;
             color: var(--text-muted); font-size: 1.4rem; cursor: pointer; line-height: 1;
         }
+        .modal-onestop-visual {
+            font-size: 0.9rem; color: var(--text-muted);
+            margin-bottom: 14px; padding: 10px 0;
+        }
         .modal-onestop h3 {
             font-size: 1.05rem; font-weight: 700; color: var(--accent);
             margin-bottom: 12px; padding-right: 28px;
+        }
+        .modal-onestop-detail {
+            font-size: 0.9rem; color: var(--text-secondary);
+            line-height: 1.7; margin-bottom: 8px;
         }
         .modal-onestop p {
             font-size: 0.85rem; color: var(--text-secondary);
             line-height: 1.65;
         }
         .modal-onestop .modal-cta {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            margin-top: 18px; padding: 12px 20px;
-            background: #FEE500; color: #3C1E1E;
-            border-radius: 12px; font-size: 0.9rem; font-weight: 700;
-            text-decoration: none;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            margin-top: 14px; padding: 14px 20px;
+            background: linear-gradient(135deg, var(--accent-sub), var(--accent));
+            color: #fff; border-radius: 12px; font-size: 0.9rem; font-weight: 700;
+            text-decoration: none; width: 100%;
+        }
+        .modal-onestop .modal-cta-sub {
+            background: rgba(255,255,255,0.08); border: 1px solid var(--border); color: var(--text-primary);
+            margin-top: 10px;
         }
         .modal-onestop .modal-cta svg { width: 20px; height: 20px; fill: #3C1E1E; }
 
@@ -436,6 +543,23 @@
         .comm-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
         .comm-icon svg { width: 24px; height: 24px; fill: var(--text-secondary); }
         .comm-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; }
+        .comm-methods {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .comm-methods button {
+            padding: 7px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.55);
+            background: rgba(15,23,42,0.85);
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
 
         /* ─── 타겟 선택 (해외 한인 / 국제부부) ─── */
         .target-wrap { padding: 0 0 8px; text-align: center; position: relative; z-index: 1; }
@@ -452,6 +576,16 @@
         }
         .target-option strong { display: block; font-size: 1rem; }
         .target-option span { display: block; }
+        button.target-option { cursor: pointer; font-family: inherit; width: 100%; }
+        .hero-cta-split {
+            display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 20px; max-width: 340px; margin-left: auto; margin-right: auto;
+        }
+        .hero-cta-split .hero-cta { width: 100%; justify-content: center; margin: 0; }
+        .hero-cta-secondary {
+            background: rgba(255,255,255,0.08); border: 2px solid var(--border); color: var(--text-primary);
+            box-shadow: none;
+        }
+        .hero-cta-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--accent); color: var(--accent); }
 
         /* ─── 시차 계산기 ─── */
         .tz-calc {
@@ -492,7 +626,7 @@
 
 <header class="topnav">
     <div class="topnav-inner">
-        <a href="#hero" class="topnav-brand" data-ko="법률사무소 합의" data-en="Law Office Hapui">법률사무소 합의</a>
+        <a href="#hero" class="topnav-brand" data-ko="법률사무소 합의" data-en="Lawoffice Settlement">법률사무소 합의</a>
         <nav class="topnav-links topnav-links-minimal">
             <a href="#test" data-ko="진단하기" data-en="Diagnose">진단하기</a>
         </nav>
@@ -503,26 +637,44 @@
     </div>
 </header>
 
-<section class="hero" id="hero">
+<main id="main-content">
+<section class="hero" id="hero" aria-label="메인 비주얼 및 상담 유도">
     <div class="hero-orb" aria-hidden="true"></div>
     <div class="hero-orb-2" aria-hidden="true"></div>
-    <div class="hero-badge" data-ko="법률사무소 합의" data-en="Law Office Hapui">법률사무소 합의</div>
+    <div class="hero-badge" data-ko="24시간 무료진단" data-en="24-hour free diagnosis">24시간 무료진단</div>
     <h1 class="hero-title">
-        <span data-ko="이혼, 혼자 고민하지 마세요." data-en="Don't face divorce alone.">이혼, 혼자 고민하지 마세요.</span><br>
-        <span class="em" data-ko="한국 법원에서 끝낼 수 있습니다." data-en="You can settle it in a Korean court.">한국 법원에서 끝낼 수 있습니다.</span>
+        <span data-ko="외국 거주 부부·국제부부를 위한&#10;국제이혼 소송, 한국 법원에서 진행합니다"
+              data-en="International divorce for overseas Korean couples and international couples&#10;Handled in Korean courts">
+            외국 거주 부부·국제부부를 위한<br>국제이혼 소송, 한국 법원에서 진행합니다
+        </span>
     </h1>
-    <p class="hero-desc" data-ko="어떤 상황에 해당하시나요? 선택하시면 바로 진단이 시작됩니다." data-en="Which applies to you? Select to start your diagnosis.">어떤 상황에 해당하시나요? 선택하시면 바로 진단이 시작됩니다.</p>
+    <p class="hero-title-sub" aria-hidden="true">
+        <span data-ko="이혼, 혼자 고민하지 마세요." data-en="Don't face divorce alone."><strong>이혼, 혼자 고민하지 마세요.</strong></span>
+    </p>
+    <p class="hero-desc" data-ko="어떤 상황에 해당하시나요? 선택 후 진단 또는 바로 상담을 선택하세요." data-en="Which applies to you? Then choose to take the diagnosis or contact us directly.">어떤 상황에 해당하시나요? 선택 후 진단 또는 바로 상담을 선택하세요.</p>
     <div class="target-wrap" role="group" aria-label="대상 선택">
         <div class="target-options">
-            <a href="#test" class="target-option" data-track="cta_click" id="cta_hero_abroad" onclick="selectTarget('abroad')">
-                <strong>🌏 외국에 사는 한국인 부부</strong>
-                <span style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">귀국 없이 비대면으로 한국 이혼 진행</span>
-            </a>
-            <a href="#test" class="target-option" data-track="cta_click" id="cta_hero_intl" onclick="selectTarget('intl')">
-                <strong>🇰🇷 한국에 사는 국제 부부</strong>
-                <span style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">외국인 배우자와의 이혼 절차 안내</span>
-            </a>
+            <button type="button" class="target-option" data-track="cta_click" id="cta_hero_abroad" onclick="selectTarget('abroad'); showHeroSplit();">
+                <strong>
+                    <span data-ko="🌏 외국에 사는 한국인 부부" data-en="🌏 Korean couple living abroad">🌏 외국에 사는 한국인 부부</span>
+                </strong>
+                <span style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;"
+                      data-ko="귀국 없이 비대면으로 한국 이혼 진행"
+                      data-en="Divorce in Korea remotely, without returning">귀국 없이 비대면으로 한국 이혼 진행</span>
+            </button>
+            <button type="button" class="target-option" data-track="cta_click" id="cta_hero_intl" onclick="selectTarget('intl'); showHeroSplit();">
+                <strong>
+                    <span data-ko="🇰🇷 한국에 사는 국제 부부" data-en="🇰🇷 International couple living in Korea">🇰🇷 한국에 사는 국제 부부</span>
+                </strong>
+                <span style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;"
+                      data-ko="외국인 배우자와의 이혼 절차 안내"
+                      data-en="Guide to divorcing a foreign spouse">외국인 배우자와의 이혼 절차 안내</span>
+            </button>
         </div>
+    </div>
+    <div class="hero-cta-split" id="heroCtaSplit" style="display:none;">
+        <a href="#test" class="hero-cta hero-cta-secondary" data-track="cta_click" onclick="scrollToTest()"><span data-ko="진단해보기" data-en="Take the diagnosis">진단해보기</span></a>
+        <a href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="hero-cta" data-track="cta_click"><span data-ko="상담하기" data-en="Consult">상담하기</span></a>
     </div>
     <p class="hero-micro" style="margin-top:20px;">
         <span data-ko="회원가입 없이" data-en="No sign-up">✓ 회원가입 없이</span>
@@ -537,53 +689,52 @@
     <section class="vs-section" id="vs" aria-label="외국 법원 vs 한국 법원">
         <div class="sec-head">
             <p class="sec-label">비교</p>
-            <h2 class="sec-title">외국 법원 vs 한국 법원, 이렇게 다릅니다.</h2>
+            <h2 class="sec-title"
+                data-ko="외국 법원 vs 한국 법원, 이렇게 다릅니다."
+                data-en="Foreign courts vs Korean courts – key differences.">외국 법원 vs 한국 법원, 이렇게 다릅니다.</h2>
         </div>
         <div style="overflow:hidden; border-radius:16px; border:1px solid var(--border);">
             <table class="vs-table">
                 <thead>
                     <tr>
-                        <th style="width:28%">비교 항목</th>
-                        <th style="text-align:center">외국 법원</th>
-                        <th class="vs-highlight" style="width:32%">한국 법원</th>
+                        <th style="width:28%"><span data-ko="비교 항목" data-en="Criteria">비교 항목</span></th>
+                        <th style="text-align:center"><span data-ko="외국 법원" data-en="Foreign court">외국 법원</span></th>
+                        <th class="vs-highlight" style="width:32%"><span data-ko="한국 법원" data-en="Korean court">한국 법원</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>국내 자산 파악</td>
-                        <td style="text-align:center; color:var(--text-secondary);">불가능</td>
-                        <td class="vs-highlight">매우 용이</td>
+                        <td><span data-ko="국내 자산 파악" data-en="Domestic assets visibility">국내 자산 파악</span></td>
+                        <td style="text-align:center; color:var(--text-secondary);"><span data-ko="불가능" data-en="Not possible">불가능</span></td>
+                        <td class="vs-highlight"><span data-ko="매우 용이" data-en="Very easy">매우 용이</span></td>
                     </tr>
                     <tr>
-                        <td>재산분할 집행</td>
-                        <td style="text-align:center; color:var(--text-secondary);">별도 소송 필수</td>
-                        <td class="vs-highlight">즉시 집행 가능</td>
+                        <td><span data-ko="재산분할 집행" data-en="Enforcing property division">재산분할 집행</span></td>
+                        <td style="text-align:center; color:var(--text-secondary);"><span data-ko="별도 소송 필수" data-en="Separate lawsuit required">별도 소송 필수</span></td>
+                        <td class="vs-highlight"><span data-ko="즉시 집행 가능" data-en="Can be enforced immediately">즉시 집행 가능</span></td>
                     </tr>
                     <tr>
-                        <td>소송 비용</td>
-                        <td style="text-align:center; color:var(--text-secondary);">매우 높음</td>
-                        <td class="vs-highlight">상대적으로 저렴</td>
+                        <td><span data-ko="소송 비용" data-en="Litigation cost">소송 비용</span></td>
+                        <td style="text-align:center; color:var(--text-secondary);"><span data-ko="매우 높음" data-en="Very high">매우 높음</span></td>
+                        <td class="vs-highlight"><span data-ko="상대적으로 저렴" data-en="Relatively low">상대적으로 저렴</span></td>
                     </tr>
                     <tr>
-                        <td>의사 전달</td>
-                        <td style="text-align:center; color:var(--text-secondary);">한계 명확</td>
-                        <td class="vs-highlight">자유롭고 정확</td>
+                        <td><span data-ko="의사 전달" data-en="Communication with court">의사 전달</span></td>
+                        <td style="text-align:center; color:var(--text-secondary);"><span data-ko="한계 명확" data-en="Clearly limited">한계 명확</span></td>
+                        <td class="vs-highlight"><span data-ko="자유롭고 정확" data-en="Free and accurate">자유롭고 정확</span></td>
                     </tr>
                     <tr>
-                        <td>재산분할 범위</td>
-                        <td style="text-align:center; color:var(--text-secondary);">제한적</td>
-                        <td class="vs-highlight">유연하고 폭넓음</td>
+                        <td><span data-ko="재산분할 범위" data-en="Scope of property division">재산분할 범위</span></td>
+                        <td style="text-align:center; color:var(--text-secondary);"><span data-ko="제한적" data-en="Limited">제한적</span></td>
+                        <td class="vs-highlight"><span data-ko="유연하고 폭넓음" data-en="Flexible and broad">유연하고 폭넓음</span></td>
                     </tr>
                     <tr>
-                        <td>절차적 편의</td>
-                        <td style="text-align:center; color:var(--text-secondary);">복잡함</td>
-                        <td class="vs-highlight">비대면 가능</td>
+                        <td><span data-ko="절차적 편의" data-en="Procedural convenience">절차적 편의</span></td>
+                        <td style="text-align:center; color:var(--text-secondary);"><span data-ko="복잡함" data-en="Complicated">복잡함</span></td>
+                        <td class="vs-highlight"><span data-ko="비대면 가능" data-en="Remote handling possible">비대면 가능</span></td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="vs-cta-wrap">
-            <a id="cta_vs" href="#consult" class="hero-cta" style="margin:0" data-track="cta_click">법률사무소 합의에 문의하기</a>
         </div>
     </section>
 </div>
@@ -592,14 +743,12 @@
 
 <!-- Communication: 어디서든 상담 -->
 <div class="section reveal">
-    <section class="comm-section" id="comm" aria-label="소통 채널">
+    <section class="comm-section" id="comm" aria-label="Check if you can divorce without returning to Korea">
         <div class="sec-head">
-            <p class="sec-label">상담</p>
-            <h2 class="sec-title">어디서든, 편한 방법으로 상담하세요</h2>
+            <h2 class="sec-title" data-ko="귀국 없이 이혼 가능 여부 확인" data-en="Can I divorce without returning to Korea?">귀국 없이 이혼 가능 여부 확인</h2>
         </div>
-        <p class="comm-desc" style="text-align:center;">구글 미트, 카카오톡 보이스톡, 국제전화, 카카오톡으로 상담할 수 있습니다.</p>
         <div class="tz-calc" id="tzCalc">
-            <span class="tz-calc-label">시차 계산기</span>
+            <span class="tz-calc-label" data-ko="시간 계산기" data-en="Time converter">시간 계산기</span>
             <div class="tz-calc-row">
                 <input type="text" id="tzRegion" list="tzCities" placeholder="지역 검색 (예: 뉴욕, 런던, 방콕)" aria-label="지역" autocomplete="off" />
                 <datalist id="tzCities"></datalist>
@@ -608,25 +757,14 @@
             <div class="tz-result" id="tzResult">한국 시간: 23:00 (당일)</div>
             <div class="tz-result-note" id="tzResultNote">한국 시간 오전 9시~오후 8시 상담 가능</div>
         </div>
-        <p class="comm-desc" style="text-align:center; margin-bottom:20px;">카카오톡에 원하는 상담 방법을 남겨놓아 주세요.</p>
-        <div style="text-align:center;">
-            <a id="cta_comm" href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="hero-cta" style="margin:0" data-track="cta_click">카카오톡으로 문의하기</a>
-        </div>
-    </section>
-</div>
-
-<div class="divider"></div>
-
-<!-- consult 앵커: 귀국 없이 이혼 가능 여부 확인 -->
-<div class="section reveal">
-    <section id="consult" class="test-wrap" style="padding-top:32px; padding-bottom:40px;">
-        <div class="sec-head">
-            <p class="sec-label">상담 안내</p>
-            <h2 class="sec-title">귀국 없이 이혼 가능 여부 확인</h2>
-        </div>
-        <p class="hero-desc" style="margin-bottom:20px;">간단히 상황만 알려주시면, 국제이혼 전담 ‘법률사무소 합의’가 한국 법원 소송 가능 여부와 예상 기간·비용을 안내해 드립니다.</p>
-        <div style="text-align:center;">
-            <a id="cta_consult" href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="hero-cta" style="margin:0" data-track="cta_click">문의하기</a>
+        <p class="comm-desc" style="text-align:center; margin-bottom:4px;"
+           data-ko="카카오톡에 원하는 상담 방법을 남겨놓아 주세요."
+           data-en="In KakaoTalk, tell us how you’d like to be contacted.">카카오톡에 원하는 상담 방법을 남겨놓아 주세요.</p>
+        <div class="comm-methods" aria-hidden="true">
+            <button type="button" data-ko="구글 미트" data-en="Google Meet">구글 미트</button>
+            <button type="button" data-ko="줌(Zoom)" data-en="Zoom">줌(Zoom)</button>
+            <button type="button" data-ko="국제전화" data-en="International call">국제전화</button>
+            <button type="button" data-ko="카카오톡 보이스톡" data-en="KakaoTalk Voice">카카오톡 보이스톡</button>
         </div>
     </section>
 </div>
@@ -760,6 +898,9 @@
             <div class="test-result-title" id="resultTitle"></div>
             <div class="test-result-desc" id="resultDesc"></div>
             <div class="test-result-score" id="resultScore"></div>
+            <div class="test-result-cta">
+                <a id="cta_after_result" href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="hero-cta" style="margin:0; width:100%; justify-content:center;" data-track="cta_click"><span data-ko="변호사와 상담하기 (전화·카톡)" data-en="Consult a lawyer (call / KakaoTalk)">변호사와 상담하기 (전화·카톡)</span></a>
+            </div>
         </div>
     </section>
 </div>
@@ -820,32 +961,45 @@
     </section>
 </div>
 
+</main>
+
 <footer class="footer">
-    <p class="footer-brand" data-ko="법률사무소 합의" data-en="Law Office Hapui">법률사무소 합의</p>
-    <p class="footer-sub" data-ko="국제이혼 가이드 · 본 콘텐츠는 참고용이며 법적 효력이 없습니다. 구체적인 사안은 전문 변호사와 상담하세요." data-en="International Divorce Guide · For reference only. Consult a lawyer for your specific case.">국제이혼 가이드 · 본 콘텐츠는 참고용이며 법적 효력이 없습니다. 구체적인 사안은 전문 변호사와 상담하세요.</p>
+    <p class="footer-brand" data-ko="법률사무소 합의" data-en="Lawoffice Settlement">법률사무소 합의</p>
+    <p class="footer-sub" data-ko="광고책임대표변호사 정지은" data-en="Advertising responsible attorney: Jung Ji-eun">광고책임대표변호사 정지은</p>
+    <p class="footer-sub" data-ko="수원시 영통구 광교중앙로 248번길 7-2 C동 602호" data-en="C-602, 7-2, Gwanggyojungang-ro 248beon-gil, Yeongtong-gu, Suwon-si">수원시 영통구 광교중앙로 248번길 7-2 C동 602호</p>
 </footer>
 
-<!-- 플로팅: 원스톱 안내 + 카카오톡 상담 -->
+<!-- 플로팅: 원스톱 + 전화/상담 + 네이버 -->
 <div class="float-group">
-    <button type="button" class="float-btn float-onestop" onclick="openOnestopModal()" aria-label="원스톱 서비스 안내">
-        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span data-ko="원스톱" data-en="One Stop">원스톱</span>
+    <button type="button" class="float-btn float-onestop" onclick="openOnestopModal()" aria-label="원스톱 서비스"
+            title="한국 입국 없이, 진단부터 아포스티유 발송까지 원스톱"
+            data-title-ko="한국 입국 없이, 진단부터 아포스티유 발송까지 원스톱"
+            data-title-en="One-stop: from diagnosis to Apostille shipment—no entry to Korea"
+            data-track="cta_click">
+        <span class="float-onestop-icons">📄 ✅ ✈️</span>
+        <span class="float-onestop-label" data-ko="원스톱" data-en="One-stop">원스톱</span>
     </button>
-    <a href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="float-btn float-kakao" aria-label="카카오톡 법률상담">
-        <svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.58 2 11c0 2.83 1.88 5.29 4.71 6.71-.16.57-.58 2.09-.67 2.41-.1.41.15.4.32.29.13-.09 2.04-1.38 2.86-1.94.58.09 1.18.13 1.78.13 5.5 0 10-3.58 10-8s-4.5-8-10-8z"/></svg>
-        <span data-ko="카카오톡 상담" data-en="Kakao Consult">카카오톡 상담</span>
+    <a href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="float-btn float-consult" aria-label="카카오톡 상담" data-track="cta_click">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6.5C4 4.57 6.24 3 9.2 3h5.6C17.76 3 20 4.57 20 6.5v3c0 3.31-3.13 6-7 6h-1l-3.2 2.8c-.4.35-1 .06-.9-.44l.5-2.36C6.01 13.76 4 11.39 4 9.5v-3Z" />
+        </svg>
+        <span data-ko="카카오톡 상담" data-en="KakaoTalk consult">카카오톡 상담</span>
+    </a>
+    <a href="https://naver.me/52RUjImo" target="_blank" rel="noopener nofollow" class="float-btn float-naver" aria-label="네이버 예약" data-track="cta_click">
+        <span class="float-naver-n">N</span>
+        <span data-ko="네이버 예약" data-en="Naver Booking">네이버 예약</span>
     </a>
 </div>
 
-<!-- 원스톱 모달: 아포스티유·영사확인 한큐에 -->
+<!-- 원스톱 모달: 진단~아포스티유 발송 원스톱 -->
 <div class="modal-bg" id="onestopModalBg" onclick="closeOnestopModal()"></div>
 <div class="modal-onestop" id="onestopModal">
     <button type="button" class="modal-close" onclick="closeOnestopModal()">&times;</button>
-    <h3 data-ko="아포스티유·영사확인 한큐에 해결" data-en="Apostille & Consular in One Stop">아포스티유·영사확인 한큐에 해결</h3>
-    <p data-ko="국제이혼 판결문 번역, 외교부 아포스티유, 영사 확인까지 법률사무소 합의에서 한큐에 진행해 드립니다." data-en="Law Office Hapui handles translation, Apostille, and consular legalization in one stop.">국제이혼 판결문 번역, 외교부 아포스티유, 영사 확인까지 법률사무소 합의에서 한큐에 진행해 드립니다.</p>
-    <a href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="modal-cta">
-        <svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.58 2 11c0 2.83 1.88 5.29 4.71 6.71-.16.57-.58 2.09-.67 2.41-.1.41.15.4.32.29.13-.09 2.04-1.38 2.86-1.94.58.09 1.18.13 1.78.13 5.5 0 10-3.58 10-8s-4.5-8-10-8z"/></svg>
-        <span data-ko="카카오톡으로 문의하기" data-en="Ask via Kakao">카카오톡으로 문의하기</span>
+    <p class="modal-onestop-visual" aria-hidden="true">📄 한국 법원 판결문 · ✅ 아포스티유 · ✈️ 해외 발송</p>
+    <h3 data-ko="한국 입국 없이, 진단부터 아포스티유 발송까지 원스톱" data-en="One-stop from diagnosis to Apostille shipment—no entry to Korea">한국 입국 없이, 진단부터 아포스티유 발송까지 원스톱</h3>
+    <p class="modal-onestop-detail" data-ko="당신은 현지에서 일상에 집중하세요. 한국에서의 복잡한 절차와 외교부 인증은 저희가 끝내겠습니다." data-en="You focus on your daily life locally. We'll handle the complex procedures and MOFA certification in Korea.">당신은 현지에서 일상에 집중하세요. 한국에서의 복잡한 절차와 외교부 인증은 저희가 끝내겠습니다.</p>
+    <a href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="modal-cta" data-track="cta_click">
+        <span data-ko="해외 거주자 전용 급행 상담" data-en="Express consultation for overseas residents">해외 거주자 전용 급행 상담</span>
     </a>
 </div>
 
@@ -896,6 +1050,16 @@ function selectTarget(type) {
         clicked.style.background = 'rgba(96,165,250,0.12)';
     }
 }
+function showHeroSplit() {
+    var el = document.getElementById('heroCtaSplit');
+    if (el) {
+        el.style.display = 'flex';
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+function scrollToTest() {
+    document.getElementById('test').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 var TOTAL_Q = 6;
 var WEIGHTS = [2, 1, 1, 2, 1, 1]; // q1~q6 가중치 (피고 거주=2, 원고 거주=1, 국적=1, 마지막 거주=2, 혼인신고=1, 실질관련=1). 최대 8점
@@ -915,6 +1079,11 @@ function setLang(l) {
                 el.textContent = v;
         }
     });
+    var onestopBtn = document.querySelector('.float-onestop[data-title-ko]');
+    if (onestopBtn) {
+        var titleVal = onestopBtn.getAttribute('data-title-' + l);
+        onestopBtn.setAttribute('title', titleVal || '');
+    }
     updateProgress();
     if (document.getElementById('resultBox').classList.contains('show')) calcResult();
     if (typeof buildTzDatalist === 'function') buildTzDatalist();

@@ -108,21 +108,32 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .hero-desc {
-            font-size: 1rem; color: var(--text-secondary); line-height: 1.65; max-width: 340px;
-            position: relative; z-index: 1; margin-bottom: 36px;
+            font-size: 1.05rem; color: var(--text-secondary); line-height: 1.65; max-width: 360px;
+            position: relative; z-index: 1; margin-bottom: 20px;
+        }
+        .hero-cta-wrap {
+            position: relative; z-index: 1;
+            margin-top: 16px; margin-bottom: 12px;
+            display: flex; flex-direction: column; align-items: center; gap: 12px;
         }
         .hero-cta {
             display: inline-flex; align-items: center; gap: 10px;
-            padding: 16px 36px;
+            padding: 18px 40px;
             background: linear-gradient(135deg, var(--accent-sub), var(--accent));
-            color: #fff; font-size: 1rem; font-weight: 700;
+            color: #fff; font-size: 1.05rem; font-weight: 700;
             border: none; border-radius: 60px; cursor: pointer;
-            position: relative; z-index: 1;
+            text-decoration: none;
             transition: transform 0.2s, box-shadow 0.3s;
-            box-shadow: 0 0 40px rgba(96,165,250,0.25);
+            box-shadow: 0 0 48px rgba(96,165,250,0.35);
         }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 0 56px rgba(96,165,250,0.4); }
         .hero-cta:active { transform: scale(0.97); }
-        .hero-cta svg { width: 18px; height: 18px; }
+        .hero-cta svg { width: 20px; height: 20px; }
+        .hero-micro {
+            font-size: 0.75rem; color: var(--text-muted);
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
+        }
+        .hero-micro span { display: inline-flex; align-items: center; gap: 4px; }
         .scroll-hint {
             position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
             display: flex; flex-direction: column; align-items: center; gap: 8px;
@@ -233,6 +244,10 @@
             width: 20px; height: 20px; accent-color: var(--accent); flex-shrink: 0;
         }
         .test-submit-wrap { text-align: center; margin-top: 28px; }
+        .test-submit-micro {
+            font-size: 0.75rem; color: var(--text-muted);
+            margin-bottom: 14px;
+        }
         .test-submit {
             display: inline-flex; align-items: center; gap: 10px;
             padding: 16px 40px;
@@ -401,17 +416,85 @@
             50% { opacity: 1; transform: translateX(-50%) translateY(8px); }
         }
         @keyframes stepIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ─── VS 비교 테이블 (랜딩) ─── */
+        .vs-section { padding: 40px 0 60px; }
+        .vs-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+        .vs-table th, .vs-table td { padding: 14px 12px; text-align: left; font-size: 0.8rem; }
+        .vs-table thead tr { background: rgba(255,255,255,0.03); }
+        .vs-table th { color: var(--text-muted); font-weight: 600; }
+        .vs-table th.vs-highlight { color: var(--accent); background: rgba(96,165,250,0.1); font-weight: 700; text-align: center; }
+        .vs-table tbody tr { border-top: 1px solid var(--border); }
+        .vs-table tbody td { color: var(--text-secondary); }
+        .vs-table tbody td:first-child { color: var(--text-primary); font-weight: 600; }
+        .vs-table tbody td.vs-highlight { color: var(--accent); font-weight: 600; text-align: center; }
+        .vs-cta-wrap { text-align: center; margin-top: 24px; }
+
+        /* ─── Communication (글로벌 소통) ─── */
+        .comm-section { padding: 40px 0 60px; background: var(--bg); }
+        .comm-icons { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+        .comm-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+        .comm-icon svg { width: 24px; height: 24px; fill: var(--text-secondary); }
+        .comm-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; }
+
+        /* ─── 타겟 선택 (해외 한인 / 국제부부) ─── */
+        .target-wrap { padding: 0 0 8px; text-align: center; position: relative; z-index: 1; }
+        .target-options { display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto; }
+        .target-option {
+            display: flex; flex-direction: column; align-items: center; gap: 2px;
+            padding: 18px 20px;
+            background: rgba(255,255,255,0.04); border: 2px solid var(--border); border-radius: 16px;
+            font-size: 0.95rem; color: var(--text-primary); text-align: center; text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, transform 0.15s;
+        }
+        .target-option:hover, .target-option:focus {
+            background: rgba(96,165,250,0.1); border-color: var(--accent); transform: translateY(-2px);
+        }
+        .target-option strong { display: block; font-size: 1rem; }
+        .target-option span { display: block; }
+
+        /* ─── 시차 계산기 ─── */
+        .tz-calc {
+            max-width: 360px; margin: 0 auto 24px; padding: 20px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            color: var(--text-primary);
+        }
+        .tz-calc-label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; display: block; }
+        .tz-calc-row { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+        .tz-calc input[type="text"], .tz-calc input[type="time"] {
+            flex: 1; min-width: 120px; padding: 10px 12px;
+            background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-size: 0.9rem; font-family: inherit;
+        }
+        .tz-calc input::placeholder { color: var(--text-muted); }
+        .tz-result {
+            margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+            font-size: 0.9rem; color: var(--accent); font-weight: 600;
+        }
+        .tz-result-note { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; margin-top: 4px; }
+
+        /* ─── HERO 흐름 안내 ─── */
+        .hero-steps {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .hero-steps span strong {
+            color: var(--accent);
+            margin-right: 4px;
+        }
     </style>
 </head>
 <body>
 
 <header class="topnav">
     <div class="topnav-inner">
-        <a href="#hero" class="topnav-brand" data-ko="법률사무소 합의 · 국제이혼 가이드" data-en="Law Office Hapui · Int'l Divorce Guide">법률사무소 합의 · 국제이혼 가이드</a>
-        <nav class="topnav-links">
-            <a href="#procedures" data-ko="절차" data-en="Procedures">절차</a>
-            <a href="#test" data-ko="테스트" data-en="Test">테스트</a>
-            <a href="#faq" data-ko="FAQ" data-en="FAQ">FAQ</a>
+        <a href="#hero" class="topnav-brand" data-ko="법률사무소 합의" data-en="Law Office Hapui">법률사무소 합의</a>
+        <nav class="topnav-links topnav-links-minimal">
+            <a href="#test" data-ko="진단하기" data-en="Diagnose">진단하기</a>
         </nav>
         <div class="lang-toggle">
             <button type="button" class="active" onclick="setLang('ko')">KOR</button>
@@ -423,18 +506,132 @@
 <section class="hero" id="hero">
     <div class="hero-orb" aria-hidden="true"></div>
     <div class="hero-orb-2" aria-hidden="true"></div>
-    <div class="hero-badge" data-ko="법률사무소 합의 진행" data-en="By Law Office Hapui">법률사무소 합의 진행</div>
+    <div class="hero-badge" data-ko="법률사무소 합의" data-en="Law Office Hapui">법률사무소 합의</div>
     <h1 class="hero-title">
-        <span data-ko="한국 법원에서" data-en="Can I get divorced">한국 법원에서</span><br>
-        <span class="em" data-ko="이혼 소송이 가능할까?" data-en="in a Korean court?">이혼 소송이 가능할까?</span>
+        <span data-ko="이혼, 혼자 고민하지 마세요." data-en="Don't face divorce alone.">이혼, 혼자 고민하지 마세요.</span><br>
+        <span class="em" data-ko="한국 법원에서 끝낼 수 있습니다." data-en="You can settle it in a Korean court.">한국 법원에서 끝낼 수 있습니다.</span>
     </h1>
-    <p class="hero-desc" data-ko="혼인신고 국가별 이혼 절차와 관할권 가능성을&#10;간단 테스트로 확인하세요" data-en="Check divorce procedures by country and&#10;jurisdiction with a short test">혼인신고 국가별 이혼 절차와 관할권 가능성을<br>간단 테스트로 확인하세요</p>
-    <a href="#test" class="hero-cta">
-        <span data-ko="관할권 테스트 시작" data-en="Start Jurisdiction Test">관할권 테스트 시작</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    <p class="hero-desc" data-ko="어떤 상황에 해당하시나요? 선택하시면 바로 진단이 시작됩니다." data-en="Which applies to you? Select to start your diagnosis.">어떤 상황에 해당하시나요? 선택하시면 바로 진단이 시작됩니다.</p>
+    <div class="target-wrap" role="group" aria-label="대상 선택">
+        <div class="target-options">
+            <a href="#test" class="target-option" data-track="cta_click" id="cta_hero_abroad" onclick="selectTarget('abroad')">
+                <strong>🌏 외국에 사는 한국인 부부</strong>
+                <span style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">귀국 없이 비대면으로 한국 이혼 진행</span>
+            </a>
+            <a href="#test" class="target-option" data-track="cta_click" id="cta_hero_intl" onclick="selectTarget('intl')">
+                <strong>🇰🇷 한국에 사는 국제 부부</strong>
+                <span style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">외국인 배우자와의 이혼 절차 안내</span>
+            </a>
+        </div>
+    </div>
+    <p class="hero-micro" style="margin-top:20px;">
+        <span data-ko="회원가입 없이" data-en="No sign-up">✓ 회원가입 없이</span>
+        <span data-ko="소요 약 1분" data-en="~1 min">✓ 소요 약 1분</span>
+        <span data-ko="참고용(법적 효력 없음)" data-en="Reference only">✓ 참고용(법적 효력 없음)</span>
+    </p>
     <div class="scroll-hint" aria-hidden="true">SCROLL<span></span></div>
 </section>
+
+<!-- VS 비교 테이블 (외국 법원 vs 한국 법원) -->
+<div class="section reveal">
+    <section class="vs-section" id="vs" aria-label="외국 법원 vs 한국 법원">
+        <div class="sec-head">
+            <p class="sec-label">비교</p>
+            <h2 class="sec-title">외국 법원 vs 한국 법원, 이렇게 다릅니다.</h2>
+        </div>
+        <div style="overflow:hidden; border-radius:16px; border:1px solid var(--border);">
+            <table class="vs-table">
+                <thead>
+                    <tr>
+                        <th style="width:28%">비교 항목</th>
+                        <th style="text-align:center">외국 법원</th>
+                        <th class="vs-highlight" style="width:32%">한국 법원</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>국내 자산 파악</td>
+                        <td style="text-align:center; color:var(--text-secondary);">불가능</td>
+                        <td class="vs-highlight">매우 용이</td>
+                    </tr>
+                    <tr>
+                        <td>재산분할 집행</td>
+                        <td style="text-align:center; color:var(--text-secondary);">별도 소송 필수</td>
+                        <td class="vs-highlight">즉시 집행 가능</td>
+                    </tr>
+                    <tr>
+                        <td>소송 비용</td>
+                        <td style="text-align:center; color:var(--text-secondary);">매우 높음</td>
+                        <td class="vs-highlight">상대적으로 저렴</td>
+                    </tr>
+                    <tr>
+                        <td>의사 전달</td>
+                        <td style="text-align:center; color:var(--text-secondary);">한계 명확</td>
+                        <td class="vs-highlight">자유롭고 정확</td>
+                    </tr>
+                    <tr>
+                        <td>재산분할 범위</td>
+                        <td style="text-align:center; color:var(--text-secondary);">제한적</td>
+                        <td class="vs-highlight">유연하고 폭넓음</td>
+                    </tr>
+                    <tr>
+                        <td>절차적 편의</td>
+                        <td style="text-align:center; color:var(--text-secondary);">복잡함</td>
+                        <td class="vs-highlight">비대면 가능</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="vs-cta-wrap">
+            <a id="cta_vs" href="#consult" class="hero-cta" style="margin:0" data-track="cta_click">법률사무소 합의에 문의하기</a>
+        </div>
+    </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- Communication: 어디서든 상담 -->
+<div class="section reveal">
+    <section class="comm-section" id="comm" aria-label="소통 채널">
+        <div class="sec-head">
+            <p class="sec-label">상담</p>
+            <h2 class="sec-title">어디서든, 편한 방법으로 상담하세요</h2>
+        </div>
+        <p class="comm-desc" style="text-align:center;">구글 미트, 카카오톡 보이스톡, 국제전화, 카카오톡으로 상담할 수 있습니다.</p>
+        <div class="tz-calc" id="tzCalc">
+            <span class="tz-calc-label">시차 계산기</span>
+            <div class="tz-calc-row">
+                <input type="text" id="tzRegion" list="tzCities" placeholder="지역 검색 (예: 뉴욕, 런던, 방콕)" aria-label="지역" autocomplete="off" />
+                <datalist id="tzCities"></datalist>
+                <input type="time" id="tzLocal" value="09:00" aria-label="현지 시간" />
+            </div>
+            <div class="tz-result" id="tzResult">한국 시간: 23:00 (당일)</div>
+            <div class="tz-result-note" id="tzResultNote">한국 시간 오전 9시~오후 8시 상담 가능</div>
+        </div>
+        <p class="comm-desc" style="text-align:center; margin-bottom:20px;">카카오톡에 원하는 상담 방법을 남겨놓아 주세요.</p>
+        <div style="text-align:center;">
+            <a id="cta_comm" href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="hero-cta" style="margin:0" data-track="cta_click">카카오톡으로 문의하기</a>
+        </div>
+    </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- consult 앵커: 귀국 없이 이혼 가능 여부 확인 -->
+<div class="section reveal">
+    <section id="consult" class="test-wrap" style="padding-top:32px; padding-bottom:40px;">
+        <div class="sec-head">
+            <p class="sec-label">상담 안내</p>
+            <h2 class="sec-title">귀국 없이 이혼 가능 여부 확인</h2>
+        </div>
+        <p class="hero-desc" style="margin-bottom:20px;">간단히 상황만 알려주시면, 국제이혼 전담 ‘법률사무소 합의’가 한국 법원 소송 가능 여부와 예상 기간·비용을 안내해 드립니다.</p>
+        <div style="text-align:center;">
+            <a id="cta_consult" href="http://pf.kakao.com/_prFQG/chat" target="_blank" rel="noopener" class="hero-cta" style="margin:0" data-track="cta_click">문의하기</a>
+        </div>
+    </section>
+</div>
+
+<div class="divider"></div>
 
 <div class="section reveal">
     <section class="cases" id="procedures" aria-label="이혼 절차">
@@ -489,8 +686,11 @@
 <div class="section reveal">
     <section class="test-wrap" id="test">
         <div class="sec-head">
-            <p class="sec-label" data-ko="관할권 테스트" data-en="JURISDICTION TEST">관할권 테스트</p>
-            <h2 class="sec-title" data-ko="한국 법원 이혼 가능 여부" data-en="Can I file in Korea?">한국 법원 이혼<br>가능 여부</h2>
+            <div id="targetBadge" style="display:none; margin-bottom:12px;">
+                <span style="display:inline-block; padding:6px 14px; background:rgba(96,165,250,0.12); border:1px solid rgba(96,165,250,0.25); border-radius:100px; font-size:0.75rem; font-weight:600; color:var(--accent);" id="targetBadgeText"></span>
+            </div>
+            <p class="sec-label" data-ko="관할권 진단" data-en="JURISDICTION TEST">관할권 진단</p>
+            <h2 class="sec-title" data-ko="한국 법원에서 이혼할 수 있을까?" data-en="Can I file in Korea?">한국 법원에서<br>이혼할 수 있을까?</h2>
         </div>
         <p class="test-progress">
             <span id="progress-text" data-ko="진행률" data-en="Progress">진행률</span>
@@ -550,7 +750,8 @@
                 </div>
             </div>
             <div class="test-submit-wrap">
-                <button type="button" class="test-submit" id="btnSubmit" onclick="calcResult()" data-ko="결과 확인하기" data-en="See Result">결과 확인하기</button>
+                <p class="test-submit-micro" data-ko="6개 질문에 답하시면 맞춤 진단 결과를 확인할 수 있습니다" data-en="Answer 6 questions to see your personalized result">6개 질문에 답하시면 맞춤 진단 결과를 확인할 수 있습니다</p>
+                <button type="button" class="test-submit" id="btnSubmit" onclick="calcResult()" data-ko="진단 결과 확인하기" data-en="See my result">진단 결과 확인하기</button>
             </div>
         </form>
 
@@ -671,6 +872,31 @@
 
 <script>
 var lang = 'ko';
+var selectedTarget = '';
+
+function selectTarget(type) {
+    selectedTarget = type;
+    var badge = document.getElementById('targetBadge');
+    var text = document.getElementById('targetBadgeText');
+    if (badge && text) {
+        badge.style.display = 'block';
+        if (type === 'abroad') {
+            text.textContent = lang === 'ko' ? '🌏 외국에 사는 한국인 부부' : '🌏 Overseas Korean couples';
+        } else {
+            text.textContent = lang === 'ko' ? '🇰🇷 한국에 사는 국제 부부' : '🇰🇷 International couples in Korea';
+        }
+    }
+    document.querySelectorAll('.target-option').forEach(function(el) {
+        el.style.borderColor = 'var(--border)';
+        el.style.background = 'rgba(255,255,255,0.04)';
+    });
+    var clicked = document.getElementById(type === 'abroad' ? 'cta_hero_abroad' : 'cta_hero_intl');
+    if (clicked) {
+        clicked.style.borderColor = 'var(--accent)';
+        clicked.style.background = 'rgba(96,165,250,0.12)';
+    }
+}
+
 var TOTAL_Q = 6;
 var WEIGHTS = [2, 1, 1, 2, 1, 1]; // q1~q6 가중치 (피고 거주=2, 원고 거주=1, 국적=1, 마지막 거주=2, 혼인신고=1, 실질관련=1). 최대 8점
 
@@ -691,6 +917,8 @@ function setLang(l) {
     });
     updateProgress();
     if (document.getElementById('resultBox').classList.contains('show')) calcResult();
+    if (typeof buildTzDatalist === 'function') buildTzDatalist();
+    if (typeof updateTzResult === 'function') updateTzResult();
 }
 
 function updateProgress() {
@@ -772,6 +1000,88 @@ function closeOnestopModal() {
     document.getElementById('onestopModalBg').classList.remove('show');
     document.getElementById('onestopModal').classList.remove('show');
 }
+
+var TZ_CITIES = [
+    { name: '뉴욕', nameEn: 'New York', offset: -5 }, { name: '로스앤젤레스', nameEn: 'Los Angeles', offset: -8 },
+    { name: '시카고', nameEn: 'Chicago', offset: -6 }, { name: '토론토', nameEn: 'Toronto', offset: -5 },
+    { name: '밴쿠버', nameEn: 'Vancouver', offset: -8 }, { name: '멕시코시티', nameEn: 'Mexico City', offset: -6 },
+    { name: '상파울루', nameEn: 'São Paulo', offset: -3 }, { name: '부에노스아이레스', nameEn: 'Buenos Aires', offset: -3 },
+    { name: '런던', nameEn: 'London', offset: 0 }, { name: '파리', nameEn: 'Paris', offset: 1 },
+    { name: '베를린', nameEn: 'Berlin', offset: 1 }, { name: '암스테르담', nameEn: 'Amsterdam', offset: 1 },
+    { name: '마드리드', nameEn: 'Madrid', offset: 1 }, { name: '모스크바', nameEn: 'Moscow', offset: 3 },
+    { name: '두바이', nameEn: 'Dubai', offset: 4 }, { name: '방콕', nameEn: 'Bangkok', offset: 7 },
+    { name: '싱가포르', nameEn: 'Singapore', offset: 8 }, { name: '홍콩', nameEn: 'Hong Kong', offset: 8 },
+    { name: '도쿄', nameEn: 'Tokyo', offset: 9 }, { name: '시드니', nameEn: 'Sydney', offset: 10 },
+    { name: '오클랜드', nameEn: 'Auckland', offset: 12 }, { name: '호치민', nameEn: 'Ho Chi Minh', offset: 7 },
+    { name: '자카르타', nameEn: 'Jakarta', offset: 7 }, { name: '마닐라', nameEn: 'Manila', offset: 8 },
+    { name: '캘커타', nameEn: 'Kolkata', offset: 5.5 }, { name: '카이로', nameEn: 'Cairo', offset: 2 },
+    { name: '요하네스버그', nameEn: 'Johannesburg', offset: 2 }, { name: '라스베이거스', nameEn: 'Las Vegas', offset: -8 },
+    { name: '샌프란시스코', nameEn: 'San Francisco', offset: -8 }, { name: '시애틀', nameEn: 'Seattle', offset: -8 },
+    { name: '워싱턴', nameEn: 'Washington DC', offset: -5 }, { name: '보스턴', nameEn: 'Boston', offset: -5 },
+    { name: '마이애미', nameEn: 'Miami', offset: -5 }, { name: '런던', nameEn: 'London', offset: 0 },
+    { name: '로마', nameEn: 'Rome', offset: 1 }, { name: '취리히', nameEn: 'Zurich', offset: 1 },
+    { name: '브뤼셀', nameEn: 'Brussels', offset: 1 }, { name: '비엔나', nameEn: 'Vienna', offset: 1 },
+    { name: '스톡홀름', nameEn: 'Stockholm', offset: 1 }, { name: '오슬로', nameEn: 'Oslo', offset: 1 },
+    { name: '이스탄불', nameEn: 'Istanbul', offset: 3 }, { name: '뉴델리', nameEn: 'New Delhi', offset: 5.5 },
+    { name: '쿠알라룸푸르', nameEn: 'Kuala Lumpur', offset: 8 }, { name: '타이베이', nameEn: 'Taipei', offset: 8 },
+    { name: '베이징', nameEn: 'Beijing', offset: 8 }, { name: '상하이', nameEn: 'Shanghai', offset: 8 },
+    { name: '멜버른', nameEn: 'Melbourne', offset: 10 }, { name: '퍼스', nameEn: 'Perth', offset: 8 }
+];
+function buildTzDatalist() {
+    var dl = document.getElementById('tzCities');
+    if (!dl) return;
+    dl.innerHTML = '';
+    TZ_CITIES.forEach(function(c) {
+        var opt = document.createElement('option');
+        opt.value = lang === 'ko' ? c.name : c.nameEn;
+        opt.setAttribute('data-offset', c.offset);
+        dl.appendChild(opt);
+    });
+}
+function getOffsetForRegion(inputVal) {
+    if (!inputVal || !inputVal.trim()) return null;
+    var v = inputVal.trim().toLowerCase();
+    for (var i = 0; i < TZ_CITIES.length; i++) {
+        var c = TZ_CITIES[i];
+        if (c.name === v || c.name.toLowerCase() === v || c.nameEn.toLowerCase() === v) return c.offset;
+        if (c.name.indexOf(v) === 0 || c.nameEn.toLowerCase().indexOf(v) === 0) return c.offset;
+    }
+    return null;
+}
+function updateTzResult() {
+    var region = document.getElementById('tzRegion');
+    var local = document.getElementById('tzLocal');
+    var result = document.getElementById('tzResult');
+    var note = document.getElementById('tzResultNote');
+    if (!region || !local || !result) return;
+    var offset = getOffsetForRegion(region.value);
+    if (offset === null) {
+        result.textContent = (lang === 'ko' ? '지역을 입력하세요 (예: 뉴욕, 런던, 방콕)' : 'Enter city (e.g. New York, London, Bangkok)');
+        if (note) note.textContent = lang === 'ko' ? '한국 시간 오전 9시~오후 8시 상담 가능' : 'Korea consultation 9:00–20:00';
+        return;
+    }
+    var parts = local.value.split(':');
+    var localHour = parseInt(parts[0], 10) + parseInt(parts[1], 10) / 60;
+    var utcHour = localHour - offset;
+    var koreaHour = utcHour + 9;
+    var day = '';
+    if (koreaHour >= 24) { koreaHour -= 24; day = lang === 'ko' ? ' (다음날)' : ' (next day)'; }
+    else if (koreaHour < 0) { koreaHour += 24; day = lang === 'ko' ? ' (전날)' : ' (prev day)'; }
+    else { day = lang === 'ko' ? ' (당일)' : ' (same day)'; }
+    var h = Math.floor(koreaHour);
+    var m = Math.round((koreaHour - h) * 60);
+    if (m === 60) { m = 0; h++; }
+    if (h === 24) h = 0;
+    var timeStr = (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+    result.textContent = (lang === 'ko' ? '한국 시간: ' : 'Korea time: ') + timeStr + day;
+    if (note) note.textContent = lang === 'ko' ? '한국 시간 오전 9시~오후 8시 상담 가능' : 'Korea consultation 9:00–20:00';
+}
+var tzRegion = document.getElementById('tzRegion');
+var tzLocal = document.getElementById('tzLocal');
+if (tzRegion) { tzRegion.addEventListener('input', updateTzResult); tzRegion.addEventListener('change', updateTzResult); }
+if (tzLocal) tzLocal.addEventListener('change', updateTzResult);
+buildTzDatalist();
+if (tzRegion && tzLocal) { tzRegion.value = ''; updateTzResult(); }
 
 var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
